@@ -1,0 +1,29 @@
+package com.example.superbuscaminasturbo;
+
+import android.os.Bundle;
+import android.app.ActionBar.LayoutParams;
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.Button;
+import android.widget.LinearLayout;
+
+public class TableroFacil extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		Button myButton = new Button(this);
+		LinearLayout ll = (LinearLayout)findViewById(R.id.buttonlayout);
+		LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		ll.addView(myButton, lp);
+		setContentView(R.layout.activity_tablero_facil);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.tablero_facil, menu);
+		return true;
+	}
+
+}
