@@ -48,13 +48,13 @@ public int showTheMetrics(){
 	 switch(density)
 	 {
 	 case DisplayMetrics.DENSITY_LOW:
-	    return 36;
+	    return 24;
 	case DisplayMetrics.DENSITY_MEDIUM:
-	      return 24;
-	 case DisplayMetrics.DENSITY_HIGH:
-	     return 36;
-	 case DisplayMetrics.DENSITY_XHIGH:
 	      return 36;
+	 case DisplayMetrics.DENSITY_HIGH:
+	     return 54;
+	 case DisplayMetrics.DENSITY_XHIGH:
+	      return 54;
 	     
 	 }
 	 

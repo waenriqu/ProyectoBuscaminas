@@ -26,17 +26,10 @@ public final class R {
         public static final int mina=0x7f020002;
         public static final int oculto=0x7f020003;
         public static final int reset=0x7f020004;
-        public static final int sample_0=0x7f020005;
-        public static final int sample_1=0x7f020006;
-        public static final int sample_2=0x7f020007;
-        public static final int sample_3=0x7f020008;
-        public static final int sample_4=0x7f020009;
-        public static final int sample_5=0x7f02000a;
-        public static final int sample_6=0x7f02000b;
-        public static final int sample_7=0x7f02000c;
     }
     public static final class id {
-        public static final int action_settings=0x7f080006;
+        public static final int ScrollView01=0x7f080006;
+        public static final int action_settings=0x7f080007;
         public static final int buttonDificil=0x7f080005;
         public static final int buttonFacil=0x7f080003;
         public static final int buttonNormal=0x7f080004;
