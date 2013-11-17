@@ -1,6 +1,10 @@
 package com.example.practica1;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import android.os.Bundle;
+import android.os.Handler;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -10,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 
 public class ModoNormal extends Activity {
 	GridView gridview;
@@ -20,6 +25,22 @@ public class ModoNormal extends Activity {
 		setContentView(R.layout.activity_modo_normal);
 		tablero = new TableroNormal(this, showTheMetrics());
 		gridview = (GridView) findViewById(R.id.gridview);
+		
+		final Reloj relojTask = new Reloj(this);
+		final Handler handler = new Handler(); 
+		Timer timer = new Timer(); 
+	    TimerTask testing = new TimerTask() {
+	        public void run() { 
+	            handler.post(new Runnable() {
+	                public void run() {
+	                    relojTask.run();
+	                }
+
+	            });
+
+
+	        }
+	    };
 		
 	    gridview.setAdapter(tablero);
 	    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -33,6 +54,20 @@ public class ModoNormal extends Activity {
 	        }
 
 	    });
+	    
+	    gridview.setOnItemLongClickListener(new OnItemLongClickListener(){
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+					int position, long arg3) {
+				tablero.changeImgAfterLongClicked(position);
+	            gridview.invalidateViews();
+				return true;
+			}
+	    	
+	    });
+	    
+	    timer.schedule(testing, 1000, 1000);
 	}
 
 	@Override

@@ -1,6 +1,10 @@
 package com.example.practica1;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import android.os.Bundle;
+import android.os.Handler;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -9,23 +13,43 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.GridView;
+import android.widget.ImageView;
 
 public class GridDemo extends Activity {
 
 	GridView gridview;
 	ImageAdapter tablero;
+	ImageView bandera;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_grid_demo);
+		
+		final Reloj relojTask = new Reloj(this);
+		final Handler handler = new Handler(); 
+		Timer timer = new Timer(); 
+	    TimerTask testing = new TimerTask() {
+	        public void run() { 
+	            handler.post(new Runnable() {
+	                public void run() {
+	                    relojTask.run();
+	                }
+
+	            });
+
+
+	        }
+	    };
+		
 		tablero = new TableroFacil(this, showTheMetrics());
 		gridview = (GridView) findViewById(R.id.gridview);
-		
+			
 	    gridview.setAdapter(tablero);
 	    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-	    
+
 	    gridview.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 	            //Toast.makeText(GridDemo.this, "" + position, Toast.LENGTH_SHORT).show();
@@ -36,6 +60,21 @@ public class GridDemo extends Activity {
 
 	    });
 	    
+	    gridview.setOnItemLongClickListener(new OnItemLongClickListener(){
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+					int position, long arg3) {
+				tablero.changeImgAfterLongClicked(position);
+	            gridview.invalidateViews();
+				return true;
+			}
+	    	
+	    });
+	    
+	    
+	    
+	    timer.schedule(testing, 1000, 1000);
 	}
 
 	@Override
@@ -69,5 +108,8 @@ public class GridDemo extends Activity {
 		startActivity(intent);
 		finish();
 	}
+
+
+
 
 }

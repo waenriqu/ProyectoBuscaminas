@@ -10,9 +10,10 @@ import android.widget.ImageView;
 public class ImageAdapter extends BaseAdapter{
 	
 	private Context mContext;
-	private int imgSize;;
+	private int imgSize;
 	protected Integer[] mThumbIds;
 	private int clicked = R.drawable.mina;
+	private int longclicked = R.drawable.bandera;
 	/**
 	 * @param args
 	 */
@@ -64,6 +65,10 @@ public class ImageAdapter extends BaseAdapter{
 
 	public void changeImgAfterClicked(int position){
 		mThumbIds[position] = clicked;
+	}
+	
+	public void changeImgAfterLongClicked(int position){
+		mThumbIds[position] = longclicked;
 	}
 	
 	public void resetTablero(){

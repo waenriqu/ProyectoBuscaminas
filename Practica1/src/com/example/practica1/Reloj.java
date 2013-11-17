@@ -1,50 +1,46 @@
 package com.example.practica1;
 
-import java.util.TimerTask;
+import android.app.Activity;
+import android.widget.TextView;
 
-public class Reloj extends TimerTask {
-	public String tiempo = "00:00";
+public class Reloj {
+	public String minutos = "00", segundos = "00";
+	int cont = 0;
+	
+	public Activity tablero;
+	
+	Reloj(Activity tablero){
+		this.tablero = tablero;
+	}
 
-	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		ultimoDigitoPlus(4);
+		TextView relojview = (TextView)tablero.findViewById(R.id.tiempoview);
+		minutos = calcularMinutos(++cont);
+		segundos = calcularSegundos(cont);
+		relojview.setText(minutos + ":" + segundos);
+		relojview.invalidate();
+		
 				
 	}
 	
-	public void ultimoDigitoPlus(int pos){
-		char digit = tiempo.charAt(pos);
-		char[] array = tiempo.toCharArray();
-		if(digit < 9){
-			array[pos] = ++digit;
-			tiempo = array.toString();
-		} else{
-			array[pos] = 0;
-			tiempo = array.toString();
-			penultimoDigitoPlus(pos-1);
+	public String calcularMinutos(int cont){
+		int minutos = cont/60;
+		if(minutos < 10){
+			return "0" + Integer.toString(minutos);
 		}
+		return Integer.toString(minutos);
 		
 	}
 
-	public void penultimoDigitoPlus(int pos) {
-		char digit = tiempo.charAt(pos);
-		char[] array = tiempo.toCharArray();
-		if(digit < 6){
-			array[pos] = ++digit;
-			tiempo = array.toString();
-		} else{
-			array[pos] = 0;
-			tiempo = array.toString();
-			if(pos>2){
-			ultimoDigitoPlus(pos-2);
-			} else{
-				array[pos] = 9;
-				tiempo = array.toString();
+	public String calcularSegundos(int cont) {
+		int segundos = cont%60;
+		if(segundos < 10){
+			return "0" + Integer.toString(segundos);
 		}
-	}
+		return Integer.toString(segundos);
+					
+		}
 
-	
-		
-	}
 
 }

@@ -31,5 +31,14 @@
     android:verticalSpacing="0px"
     android:layout_centerHorizontal="true" />
 
+<TextView
+    android:id="@+id/tiempoview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignRight="@id/gridview"
+    android:layout_alignParentTop="true"
+    android:text="@string/reloj"
+    android:textSize="48sp"/>
+
 </RelativeLayout>
 </HorizontalScrollView>
