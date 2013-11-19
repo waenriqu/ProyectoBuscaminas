@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.View;
@@ -48,7 +47,6 @@ public class GridDemo extends Activity {
 		gridview = (GridView) findViewById(R.id.gridview);
 			
 	    gridview.setAdapter(tablero);
-	    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
 	    gridview.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
