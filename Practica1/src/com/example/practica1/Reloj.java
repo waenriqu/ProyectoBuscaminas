@@ -12,6 +12,11 @@ public class Reloj {
 	Reloj(Activity tablero){
 		this.tablero = tablero;
 	}
+	
+	Reloj(Activity tablero, int cont){
+		this.tablero = tablero;
+		this.cont = cont;
+	}
 
 	public void run() {
 		// TODO Auto-generated method stub
@@ -41,6 +46,10 @@ public class Reloj {
 		return Integer.toString(segundos);
 					
 		}
+
+	public int getCont() {
+		return cont;
+	}
 
 
 }

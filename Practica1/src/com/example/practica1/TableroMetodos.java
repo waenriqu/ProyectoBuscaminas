@@ -3,6 +3,8 @@ package com.example.practica1;
 import java.util.ArrayList;
 
 public class TableroMetodos {
+	
+	/**
     ArrayList tabla[][];
     int numMinas;
     int tamañoX;
@@ -109,5 +111,7 @@ public class TableroMetodos {
             return numMina;
         }
     }
+    
+    */
     
 }

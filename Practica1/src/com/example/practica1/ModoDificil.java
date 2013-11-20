@@ -6,26 +6,40 @@ import java.util.TimerTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 
 public class ModoDificil extends Activity {
 	GridView gridview;
 	ImageAdapter tablero;
+	Reloj relojTask;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_modo_dificil);
-		tablero = new TableroDificil(this, showTheMetrics());
-		gridview = (GridView) findViewById(R.id.gridview);
 		
-		final Reloj relojTask = new Reloj(this);
+		@SuppressWarnings("deprecation")
+		final CargarDatos data = (CargarDatos) getLastNonConfigurationInstance();
+	    if (data == null) {
+	        relojTask = new Reloj(this);
+	        tablero = new TableroDificil(this, showTheMetrics());
+	    } else{
+	    	TextView relojview = (TextView) findViewById(R.id.tiempoview);
+	    	relojTask = new Reloj(this, data.getCont());
+	    	tablero = new TableroDificil(this, showTheMetrics(), (Integer[])data.getBoard());
+	    	relojview.setText(data.getTime());
+	    	relojview.invalidate();
+	    }
+	    
 		final Handler handler = new Handler(); 
 		Timer timer = new Timer(); 
 	    TimerTask testing = new TimerTask() {
@@ -41,6 +55,7 @@ public class ModoDificil extends Activity {
 	        }
 	    };
 	    
+	    gridview = (GridView) findViewById(R.id.gridview);
 	    gridview.setAdapter(tablero);
 	    
 	    gridview.setOnItemClickListener(new OnItemClickListener() {
@@ -76,22 +91,26 @@ public class ModoDificil extends Activity {
 	}
 	
 	public int showTheMetrics(){
-		 int density= getResources().getDisplayMetrics().densityDpi;
+		int density= getResources().getDisplayMetrics().densityDpi;
 
 		 switch(density)
 		 {
 		 case DisplayMetrics.DENSITY_LOW:
-		    return 24;
+			return 24;
 		case DisplayMetrics.DENSITY_MEDIUM:
-		      return 36;
+			return 36;
 		 case DisplayMetrics.DENSITY_HIGH:
-		     return 54;
+			 return 54;
 		 case DisplayMetrics.DENSITY_XHIGH:
-		      return 54;
+			 return 72;
+		 case DisplayMetrics.DENSITY_XXHIGH:
+			 return 108;
+		 case DisplayMetrics.DENSITY_XXXHIGH:
+			 return 144;
 		     
 		 }
-		 
-		 return 24;
+		 dispResolution("none");
+		 return 72;
 	}
 
 	public void resetGame(View view){
@@ -99,6 +118,20 @@ public class ModoDificil extends Activity {
 		startActivity(intent);
 		finish();
 	}
+	
+	public void dispResolution(CharSequence text){
+		Context context = getApplicationContext();
+		int duration = Toast.LENGTH_SHORT;
 
+		Toast toast = Toast.makeText(context, text, duration);
+		toast.show();
+	}
+
+	@Override
+	public Object onRetainNonConfigurationInstance() {
+		TextView marcador = (TextView) findViewById(R.id.tiempoview);
+	    final CargarDatos data = new CargarDatos(relojTask.getCont(),marcador.getText(),(Object[])tablero.getmThumbIds());
+	    return data;
+	}
 
 }

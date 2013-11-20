@@ -2,10 +2,10 @@ package com.example.practica1;
 
 public class CargarDatos {
 	int cont;
-	String time;
+	CharSequence time;
 	Object [] board;
 	
-	public CargarDatos(int c, String r, Object [] t){
+	public CargarDatos(int c, CharSequence r, Object [] t){
 		this.cont=c;
 		this.time=r;
 		this.board=t;
@@ -15,7 +15,7 @@ public class CargarDatos {
 		return cont;
 	}
 
-	public String getTime() {
+	public CharSequence getTime() {
 		return time;
 	}
 

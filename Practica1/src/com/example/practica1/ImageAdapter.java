@@ -79,6 +79,12 @@ public class ImageAdapter extends BaseAdapter{
 		}
 	}
 
+	public Integer[] getmThumbIds() {
+		return mThumbIds;
+	}
+	
+	
+
 	}
 	
 	

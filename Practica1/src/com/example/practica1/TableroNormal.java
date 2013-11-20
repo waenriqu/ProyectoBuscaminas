@@ -99,4 +99,9 @@ public class TableroNormal extends ImageAdapter{
 		super(c,imgSize);
 		mThumbIds = tablero;
 	}
+	
+	public TableroNormal(Context c, int imgSize, Integer[] array){
+		super(c,imgSize);
+		mThumbIds = array;
+	}
 }

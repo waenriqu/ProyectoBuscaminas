@@ -300,4 +300,8 @@ public class TableroDificil extends ImageAdapter{
 		mThumbIds = tablero;
 	}
 
+	public TableroDificil(Context c, int imgSize, Integer[] array){
+		super(c,imgSize);
+		mThumbIds = array;
+	}
 }

@@ -61,5 +61,10 @@ public class TableroFacil extends ImageAdapter{
 		super(c,imgSize);
 		mThumbIds = tablero;
 	}
+	
+	public TableroFacil(Context c, int imgSize, Integer[] array){
+		super(c,imgSize);
+		mThumbIds = array;
+	}
 
 }
