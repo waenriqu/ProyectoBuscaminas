@@ -24,11 +24,13 @@ public class ModoFacil extends modoPadre {
 	    } else{
 	    	TextView relojview = (TextView) findViewById(R.id.tiempoview);
 	    	relojTask = new Reloj(this, data.getCont());
-	    	tableroAdapter = new TableroFacil(this, showTheMetrics(), data.getBoard(), data.getGraphics());
+	    	tableroAdapter = new TableroFacil(this, showTheMetrics(), data.getBoard(), data.getGraphics(), data.getRevelados());
 	    	relojview.setText(data.getTime());
-	    	perdiste = data.getPerdiste();
-	    	if(!perdiste){
+	    	finish = data.getFinish();
+	    	if(!finish){
 	    	startTimer();
+	    	} else{
+	    		actualizarCarita(tableroAdapter.isVictoria());
 	    	}
 	    	start = true;
 	    	relojview.invalidate();
@@ -40,9 +42,11 @@ public class ModoFacil extends modoPadre {
 		
 		gridview = (GridView) findViewById(R.id.gridview);
 		gridview.setAdapter(tableroAdapter);
-		if(!perdiste){
+		if(!finish){
 		setListeners();
-		}
+		}else{
+    		actualizarCarita(tableroAdapter.isVictoria());
+    	}
 	    
 	    }
 

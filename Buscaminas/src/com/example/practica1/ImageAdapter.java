@@ -15,7 +15,7 @@ public class ImageAdapter extends BaseAdapter{
 	protected Casilla[] tablero;
 	protected Integer[] mThumbIds;
 	private int longclicked = R.drawable.bandera;
-	protected int distX;
+	protected int distX, nMinas, revelados;
 	
 	/**
 	 * @param args
@@ -38,13 +38,11 @@ public class ImageAdapter extends BaseAdapter{
 	}
 	
 	//Llena de minas el tablero de forma aleatoria. Primero verfica que la casilla no tenga mina para luego colocarla. También evita colocar minas en la posición donde se dio el primer click
-	public void generaMina(int nminas, int pos){
+	public void generaMina(int pos){
 		
 	int r; 
-
-	
-	
-	for(int i = 0; i<nminas; i++){
+		
+	for(int i = 0; i<nMinas; i++){
 		do{
 			r = ((int)(Math.random()*tablero.length));
 		}while(tablero[r].getEsMina() || r == pos);
@@ -89,52 +87,52 @@ public class ImageAdapter extends BaseAdapter{
 		switch (tipo){
 		case 0:
 			tablero[position].cambiarTipo(0);
-			tablero[position].cambiarEstado();
+			descubrirModelCasilla(position);
 			mThumbIds[position] = R.drawable.mina0;
 			break;
 		case 1:
 			tablero[position].cambiarTipo(1);
-			tablero[position].cambiarEstado();
+			descubrirModelCasilla(position);
 			mThumbIds[position] = R.drawable.mina1;
 			break;
 		case 2:
 			tablero[position].cambiarTipo(2);
-			tablero[position].cambiarEstado();
+			descubrirModelCasilla(position);
 			mThumbIds[position] = R.drawable.mina2;
 			break;
 		case 3:
 			tablero[position].cambiarTipo(3);
-			tablero[position].cambiarEstado();
+			descubrirModelCasilla(position);
 			mThumbIds[position] = R.drawable.mina3;
 			break;
 		case 4:
 			tablero[position].cambiarTipo(4);
-			tablero[position].cambiarEstado();
+			descubrirModelCasilla(position);
 			mThumbIds[position] = R.drawable.mina4;
 			break;
 		case 5:
 			tablero[position].cambiarTipo(5);
-			tablero[position].cambiarEstado();
+			descubrirModelCasilla(position);
 			mThumbIds[position] = R.drawable.mina5;
 			break;
 		case 6:
 			tablero[position].cambiarTipo(6);
-			tablero[position].cambiarEstado();
+			descubrirModelCasilla(position);
 			mThumbIds[position] = R.drawable.mina6;
 			break;
 		case 7:
 			tablero[position].cambiarTipo(7);
-			tablero[position].cambiarEstado();
+			descubrirModelCasilla(position);
 			mThumbIds[position] = R.drawable.mina7;
 			break;
 		case 8:
 			tablero[position].cambiarTipo(8);
-			tablero[position].cambiarEstado();
+			descubrirModelCasilla(position);
 			mThumbIds[position] = R.drawable.mina8;
 			break;
 		case Casilla.mina:
 			tablero[position].cambiarTipo(Casilla.mina);
-			tablero[position].cambiarEstado();
+			descubrirModelCasilla(position);
 			mThumbIds[position] = R.drawable.mina;
 			break;
 		}
@@ -234,7 +232,7 @@ public class ImageAdapter extends BaseAdapter{
 	    int pos3 = posicion + distX+1;
 	    
 	        
-	 		if((pos7>0)&&((pos7%distX)-(pos8%distX) == -1) && (tablero[pos7].isOculto())){
+	 		if((pos7>=0)&&((pos7%distX)-(pos8%distX) == -1) && (tablero[pos7].isOculto())){
 		 		changeImgAfterClicked(pos7, calcularMinas(pos7));	
 		 		if(calcularMinas(pos7)==0){
 		 			revelarAdy(pos7);
@@ -242,7 +240,7 @@ public class ImageAdapter extends BaseAdapter{
 	 		}
 	 		
 	 		
-	 		if((pos8>0)&& (tablero[pos8].isOculto())){
+	 		if((pos8>=0)&& (tablero[pos8].isOculto())){
 	 			changeImgAfterClicked(pos8, calcularMinas(pos8));	
 		 		if(calcularMinas(pos8)==0){
 		 			revelarAdy(pos8);
@@ -257,7 +255,7 @@ public class ImageAdapter extends BaseAdapter{
 		 		}
 	 		}
 	 		
-	 		if((pos4>0)&&(pos4%distX-posicion%distX==-1)&& (tablero[pos4].isOculto())){
+	 		if((pos4>=0)&&(pos4%distX-posicion%distX==-1)&& (tablero[pos4].isOculto())){
 	 			changeImgAfterClicked(pos4, calcularMinas(pos4));	
 		 		if(calcularMinas(pos4)==0){
 		 			revelarAdy(pos4);
@@ -297,7 +295,28 @@ public class ImageAdapter extends BaseAdapter{
 	                
 	        }
 
+	
+	public void revelarTodasMinas(){
+		for(int i = 0; i < tablero.length; i++){
+			if(tablero[i].getEsMina()){
+				changeImgAfterClicked(i, Casilla.mina);
+			}
+		}
 	}
+	
+	public void descubrirModelCasilla(int position){
+		tablero[position].cambiarEstado();
+		revelados++;
+	}
+	
+	public Boolean isVictoria(){
+		if(revelados == (tablero.length - nMinas)){
+			return true;
+		}
+		return false;
+	}
+	}
+
 	
 	
 

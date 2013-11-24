@@ -293,7 +293,9 @@ public class TableroDificil extends ImageAdapter{
 	            R.drawable.oculto, R.drawable.oculto,
 	            R.drawable.oculto, R.drawable.oculto,
 	            R.drawable.oculto, R.drawable.oculto,
-	             
+	            //480
+	            R.drawable.oculto, R.drawable.oculto,
+	            R.drawable.oculto, R.drawable.oculto
 	             
 	    };
 	 
@@ -575,7 +577,9 @@ public class TableroDificil extends ImageAdapter{
 		            new Casilla(), new Casilla(),
 		            new Casilla(), new Casilla(),
 		            new Casilla(), new Casilla(),
-		          
+		          //480
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla()
 		             
 		    };
 	
@@ -585,16 +589,20 @@ public class TableroDificil extends ImageAdapter{
 		mThumbIds = graphics;
 		tablero = emptyBoard;
 		distX = 16;
+		revelados = 0;
+		nMinas = 99;
 	}
 	
 	//Crea un tablero difícil con celdas guardadas anteriormente.
-	public TableroDificil(Context c, int imgSize, Casilla[] array, Integer[] graphics){
+	public TableroDificil(Context c, int imgSize, Casilla[] array, Integer[] graphics, int revelados){
 		super(c,imgSize);
 		tablero = array;
 		mThumbIds = graphics;
 		this.graphics = null;
 		this.emptyBoard = null;
 		distX = 16;
+		nMinas = 99;
+		this.revelados = revelados;
 	}	
 
 }

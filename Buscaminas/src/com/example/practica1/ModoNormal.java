@@ -23,11 +23,13 @@ public class ModoNormal extends modoPadre {
 	    } else{
 	    	TextView relojview = (TextView) findViewById(R.id.tiempoview);
 	    	relojTask = new Reloj(this, data.getCont());
-	    	tableroAdapter = new TableroNormal(this, showTheMetrics(), data.getBoard(), data.getGraphics());
+	    	tableroAdapter = new TableroNormal(this, showTheMetrics(), data.getBoard(), data.getGraphics(), data.getRevelados());
 	    	relojview.setText(data.getTime());
-	    	perdiste = data.getPerdiste();
-	    	if(!perdiste){
+	    	finish = data.getFinish();
+	    	if(!finish){
 	    	startTimer();
+	    	}else{
+	    		actualizarCarita(tableroAdapter.isVictoria());
 	    	}
 	    	start = true;
 	    	relojview.invalidate();
@@ -37,9 +39,11 @@ public class ModoNormal extends modoPadre {
 			
 	    gridview.setAdapter(tableroAdapter);
 
-	    if(!perdiste){
+	    if(!finish){
 			setListeners();
-			}
+			}else{
+	    		actualizarCarita(tableroAdapter.isVictoria());
+	    	}
 	    
 	    }
 

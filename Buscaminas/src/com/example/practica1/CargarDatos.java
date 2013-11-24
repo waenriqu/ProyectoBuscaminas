@@ -1,18 +1,19 @@
 package com.example.practica1;
 
 public class CargarDatos {
-	int cont;
+	int cont, revelados;
 	CharSequence time;
 	Casilla [] board;
 	Integer [] graphics;
-	boolean perdiste;
+	boolean finish;
 	
-	public CargarDatos(int c, CharSequence r, Casilla [] t, Integer[] g, boolean perdiste){
+	public CargarDatos(int c, CharSequence r, Casilla [] t, Integer[] g, boolean perdiste, int revelados){
 		this.cont=c;
 		this.time=r;
 		this.board=t;
 		this.graphics=g;
-		this.perdiste = perdiste;
+		this.finish = perdiste;
+		this.revelados = revelados;
 	}
 
 	public int getCont() {
@@ -31,7 +32,11 @@ public class CargarDatos {
 		return graphics;
 	}
 
-	public boolean getPerdiste(){
-		return perdiste;
+	public boolean getFinish(){
+		return finish;
+	}
+	
+	public int getRevelados() {
+		return revelados;
 	}
 }

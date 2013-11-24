@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
@@ -22,7 +23,7 @@ public abstract class modoPadre extends Activity{
 	ImageAdapter tableroAdapter;
 	Reloj relojTask;
 	Timer timer;
-	Boolean start = false, perdiste = false;
+	Boolean start = false, finish = false;
 	int nMinas;
 	
 	@Override
@@ -36,7 +37,7 @@ public abstract class modoPadre extends Activity{
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 	            //Toast.makeText(GridDemo.this, "" + position, Toast.LENGTH_SHORT).show();
 	            if (!start){
-	            tableroAdapter.generaMina(nMinas, position);
+	            tableroAdapter.generaMina(position);
 	            startTimer();
 	            start = true;
 	            }
@@ -45,14 +46,20 @@ public abstract class modoPadre extends Activity{
 	            	return;
 	            }
 	            if(tableroAdapter.getTablero()[position].getEsMina()){
-	            	tableroAdapter.changeImgAfterClicked(position, Casilla.mina);
+	            	tableroAdapter.revelarTodasMinas();
 	            	detenerJuego();
+	            	actualizarCarita(false);
 	            	gridview.invalidateViews();
 	            	return;
 	            }
 	            
 	             seleccionarNumero(position);
 	            gridview.invalidateViews();
+	            
+	            if(tableroAdapter.isVictoria()){
+	            	detenerJuego();
+	            	actualizarCarita(true);
+	            }
 	        }
 
 	    });
@@ -153,7 +160,7 @@ public abstract class modoPadre extends Activity{
 		if(!start){
 			return null;
 		}
-	    final CargarDatos data = new CargarDatos(relojTask.getCont(),marcador.getText(),tableroAdapter.getTablero(), tableroAdapter.getGraphics(), perdiste);
+	    final CargarDatos data = new CargarDatos(relojTask.getCont(),marcador.getText(),tableroAdapter.getTablero(), tableroAdapter.getGraphics(), finish, tableroAdapter.revelados);
 	    return data;
 	}
 	
@@ -184,7 +191,19 @@ public abstract class modoPadre extends Activity{
 
 	public void detenerJuego(){
 		gridview.setOnItemClickListener(null);
+		gridview.setOnItemLongClickListener(null);
 		timer.cancel();
 		timer = null;
+		finish = true;
+	}
+	
+	public void actualizarCarita(boolean victoria){
+		ImageButton ib = (ImageButton)findViewById(R.id.resetButton);
+		if(victoria){
+			ib.setImageResource(R.drawable.clicked);
+		}else{
+		ib.setImageResource(R.drawable.yoonsad);
+		}
+		ib.invalidate();
 	}
 }

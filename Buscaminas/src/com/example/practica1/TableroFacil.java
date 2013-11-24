@@ -120,16 +120,20 @@ public class TableroFacil extends ImageAdapter{
 		mThumbIds = graphics;
 		tablero = emptyBoard;
 		distX = 9;
+		revelados = 0;
+		nMinas = 9;
 	}
 	
 	//Crea un tablero fácil con celdas guardadas anteriormente.
-	public TableroFacil(Context c, int imgSize, Casilla[] array, Integer[] graphics){
+	public TableroFacil(Context c, int imgSize, Casilla[] array, Integer[] graphics, int revelados){
 		super(c,imgSize);
 		tablero = array;
 		mThumbIds = graphics;
 		this.graphics = null;
 		this.emptyBoard = null;
 		distX = 9;
+		nMinas = 9;
+		this.revelados = revelados;
 	}
 	
 	

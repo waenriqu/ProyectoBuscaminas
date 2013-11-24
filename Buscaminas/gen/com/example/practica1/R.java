@@ -44,6 +44,7 @@ public final class R {
         public static final int sample_5=0x7f020014;
         public static final int sample_6=0x7f020015;
         public static final int sample_7=0x7f020016;
+        public static final int yoonsad=0x7f020017;
     }
     public static final class id {
         public static final int ScrollView01=0x7f080004;

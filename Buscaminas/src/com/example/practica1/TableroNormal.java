@@ -328,15 +328,19 @@ public class TableroNormal extends ImageAdapter{
 		mThumbIds = graphics;
 		tablero = emptyBoard;
 		distX = 16;
+		revelados = 0;
+		nMinas = 40;
 		
 	}
 	
 	//Crea un tablero normal con celdas guardadas anteriormente.
-	public TableroNormal(Context c, int imgSize, Casilla[] array, Integer[] graphics){
+	public TableroNormal(Context c, int imgSize, Casilla[] array, Integer[] graphics, int revelados){
 		super(c,imgSize);
 		tablero = array;
 		mThumbIds = graphics;
 		this.graphics = null;
 		this.emptyBoard = null;
 		distX = 16;
+		nMinas = 40;
+		this.revelados = revelados;
 	}}
