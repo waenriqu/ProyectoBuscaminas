@@ -39,12 +39,17 @@ public abstract class modoPadre extends Activity{
 	            startTimer();
 	            start = true;
 	            }
+	            
+	            if(!tableroAdapter.getTablero()[position].isOculto()){
+	            	return;
+	            }
 	            if(tableroAdapter.getTablero()[position].getEsMina()){
 	            	tableroAdapter.changeImgAfterClicked(position, Casilla.mina);
 	            	gridview.invalidateViews();
 	            	return;
 	            }
-	            tableroAdapter.changeImgAfterClicked(position, 0);
+	            
+	             seleccionarNumero(position);
 	            gridview.invalidateViews();
 	        }
 
@@ -55,6 +60,9 @@ public abstract class modoPadre extends Activity{
 			@Override
 			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
 					int position, long arg3) {
+				if(!tableroAdapter.getTablero()[position].isOculto()){
+					return true;
+				}
 				tableroAdapter.changeImgAfterLongClicked(position);
 	            gridview.invalidateViews();
 				return true;
@@ -62,6 +70,39 @@ public abstract class modoPadre extends Activity{
 	    	
 	    });
 	    
+	}
+	
+	public void seleccionarNumero(int pos){
+		switch(tableroAdapter.calcularMinas(pos)){
+		case 0:
+			tableroAdapter.changeImgAfterClicked(pos, 0);
+			tableroAdapter.revelarAdy(pos);
+			break;
+		case 1:
+			tableroAdapter.changeImgAfterClicked(pos, 1);
+			break;
+		case 2:
+			tableroAdapter.changeImgAfterClicked(pos, 2);
+			break;
+		case 3:
+			tableroAdapter.changeImgAfterClicked(pos, 3);
+			break;
+		case 4:
+			tableroAdapter.changeImgAfterClicked(pos, 4);
+			break;
+		case 5:
+			tableroAdapter.changeImgAfterClicked(pos, 5);
+			break;
+		case 6:
+			tableroAdapter.changeImgAfterClicked(pos, 6);
+			break;
+		case 7:
+			tableroAdapter.changeImgAfterClicked(pos, 7);
+			break;
+		case 8:
+			tableroAdapter.changeImgAfterClicked(pos, 8);
+			break;
+		}
 	}
 
 	@Override
@@ -107,9 +148,19 @@ public abstract class modoPadre extends Activity{
 	@Override
 	public Object onRetainNonConfigurationInstance() {
 		TextView marcador = (TextView) findViewById(R.id.tiempoview);
+		if(!start){
+			return null;
+		}
 	    final CargarDatos data = new CargarDatos(relojTask.getCont(),marcador.getText(),tableroAdapter.getTablero(), tableroAdapter.getGraphics());
 	    return data;
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 	public void startTimer(){
 		final Handler handler = new Handler(); 

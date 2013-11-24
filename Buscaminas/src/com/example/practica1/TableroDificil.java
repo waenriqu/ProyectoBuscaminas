@@ -594,6 +594,7 @@ public class TableroDificil extends ImageAdapter{
 		mThumbIds = graphics;
 		this.graphics = null;
 		this.emptyBoard = null;
+		distX = 16;
 	}	
 
 }

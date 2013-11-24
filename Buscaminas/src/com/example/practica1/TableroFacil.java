@@ -129,6 +129,7 @@ public class TableroFacil extends ImageAdapter{
 		mThumbIds = graphics;
 		this.graphics = null;
 		this.emptyBoard = null;
+		distX = 9;
 	}
 	
 	

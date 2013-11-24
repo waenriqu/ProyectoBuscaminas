@@ -19,6 +19,10 @@ public class Casilla {
     public void cambiarEstado(){
         oculta = false;
     }
+    
+    public boolean isOculto(){
+    	return oculta;
+    }
 
     public boolean getEsMina(){
     	return esMina;

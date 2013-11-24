@@ -141,6 +141,7 @@ public class ImageAdapter extends BaseAdapter{
 	}
 	
 	
+	
 	//Pone la imagen de la bandera.
 	public void changeImgAfterLongClicked(int position){
 		mThumbIds[position]=longclicked;
@@ -180,40 +181,39 @@ public class ImageAdapter extends BaseAdapter{
 	    
 	        int numMinasLados = 0;
 	 		
-	 		//Falta hacer validaciones para bordes y que no tome en cuenta valores de la siguiente columna
 	 		
 	        
-	 		if((pos7>0)&&(pos7%distX-pos8%distX == 1)&&(tablero[pos7].tipo == 0)){
+	 		if((pos7>0)&&((pos7%distX)-(pos8%distX) == -1)&&(tablero[pos7].getEsMina())){
 	 		numMinasLados++;
 	 		}
 	 		
 	 		
-	 		if((pos8>0)&&(tablero[pos8].tipo == 0)){
+	 		if((pos8>0)&&(tablero[pos8].getEsMina())){
 	 		numMinasLados++;
 	 		}
 	 		
 	 		
-	 		if((pos9>0)&&(pos9%distX-pos8%distX==1)&&(tablero[pos9].tipo == 0)){
+	 		if((pos9>0)&&(pos9%distX-pos8%distX==1)&&(tablero[pos9].getEsMina())){
 	 		numMinasLados++;
 	 		}
 	 		
-	 		if((pos4>9)&&(pos4%distX-posicion%distX==1)&&(tablero[pos4].tipo == 0)){
+	 		if((pos4>0)&&(pos4%distX-posicion%distX==-1)&&(tablero[pos4].getEsMina())){
 	 		numMinasLados++;
 	 		}
 	 		
-	 		if((pos6<tablero.length)&&(pos6%distX-posicion%distX==1)&&(tablero[pos6].tipo == 0)){
+	 		if((pos6<tablero.length)&&(pos6%distX-posicion%distX==1)&&(tablero[pos6].getEsMina())){
 	 		numMinasLados++;
 	 		}
 	 		
-	 		if((pos1<tablero.length)&&(pos1%distX-pos2%distX==1)&&(tablero[pos1].tipo == 0)){
+	 		if((pos1<tablero.length)&&(pos1%distX-pos2%distX==-1)&&(tablero[pos1].getEsMina())){
 	 		numMinasLados++;
 	 		}
 	 		
-	        if((pos2<tablero.length)&&(tablero[pos2].tipo == 0)){
+	        if((pos2<tablero.length)&&(tablero[pos2].getEsMina())){
 	 		numMinasLados++;
 	 		}
 	 		
-	 		if((pos3<tablero.length)&&(pos3%distX - pos2%distX==1)&&(tablero[pos3].tipo == 0)){
+	 		if((pos3<tablero.length)&&(pos3%distX - pos2%distX==1)&&(tablero[pos3].getEsMina())){
 	 		numMinasLados++;
 	 		}
 	 		
@@ -223,6 +223,79 @@ public class ImageAdapter extends BaseAdapter{
 	                
 	        }
 
+	public void revelarAdy(int posicion){
+	    int pos7 = posicion - distX -1;
+	    int pos8 = posicion - distX;
+	    int pos9 = posicion - distX+1;
+	    int pos4 = posicion - 1;
+	    int pos6 = posicion + 1;
+	    int pos1 = posicion + distX-1;
+	    int pos2 = posicion + distX;
+	    int pos3 = posicion + distX+1;
+	    
+	        
+	 		if((pos7>0)&&((pos7%distX)-(pos8%distX) == -1) && (tablero[pos7].isOculto())){
+		 		changeImgAfterClicked(pos7, calcularMinas(pos7));	
+		 		if(calcularMinas(pos7)==0){
+		 			revelarAdy(pos7);
+		 		}
+	 		}
+	 		
+	 		
+	 		if((pos8>0)&& (tablero[pos8].isOculto())){
+	 			changeImgAfterClicked(pos8, calcularMinas(pos8));	
+		 		if(calcularMinas(pos8)==0){
+		 			revelarAdy(pos8);
+		 		}
+	 		}
+	 		
+	 		
+	 		if((pos9>0)&&(pos9%distX-pos8%distX==1)&& (tablero[pos9].isOculto())){
+	 			changeImgAfterClicked(pos9, calcularMinas(pos9));	
+		 		if(calcularMinas(pos9)==0){
+		 			revelarAdy(pos9);
+		 		}
+	 		}
+	 		
+	 		if((pos4>0)&&(pos4%distX-posicion%distX==-1)&& (tablero[pos4].isOculto())){
+	 			changeImgAfterClicked(pos4, calcularMinas(pos4));	
+		 		if(calcularMinas(pos4)==0){
+		 			revelarAdy(pos4);
+		 		}
+	 		}
+	 		
+	 		if((pos6<tablero.length)&&(pos6%distX-posicion%distX==1)&& (tablero[pos6].isOculto())){
+	 			changeImgAfterClicked(pos6, calcularMinas(pos6));	
+		 		if(calcularMinas(pos6)==0){
+		 			revelarAdy(pos6);
+		 		}
+	 		}
+	 		
+	 		if((pos1<tablero.length)&&(pos1%distX-pos2%distX==-1)&& (tablero[pos1].isOculto())){
+	 			changeImgAfterClicked(pos1, calcularMinas(pos1));	
+		 		if(calcularMinas(pos1)==0){
+		 			revelarAdy(pos1);
+		 		}
+	 		}
+	 		
+	        if((pos2<tablero.length)&& (tablero[pos2].isOculto())){
+	        	changeImgAfterClicked(pos2, calcularMinas(pos2));	
+		 		if(calcularMinas(pos2)==0){
+		 			revelarAdy(pos2);
+		 		}
+	 		}
+	 		
+	 		if((pos3<tablero.length)&&(pos3%distX - pos2%distX==1)&& (tablero[pos3].isOculto())){
+	 			changeImgAfterClicked(pos3, calcularMinas(pos3));	
+		 		if(calcularMinas(pos3)==0){
+		 			revelarAdy(pos3);
+		 		}
+	 		}
+	 		
+	 		     
+	                
+	                
+	        }
 
 	}
 	
