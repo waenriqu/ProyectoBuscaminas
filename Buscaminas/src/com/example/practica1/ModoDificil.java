@@ -27,7 +27,10 @@ public class ModoDificil extends modoPadre {
 	    	relojTask = new Reloj(this, data.getCont());
 	    	tableroAdapter = new TableroDificil(this, showTheMetrics(), data.getBoard(), data.getGraphics());
 	    	relojview.setText(data.getTime());
+	    	perdiste = data.getPerdiste();
+	    	if(!perdiste){
 	    	startTimer();
+	    	}
 	    	start = true;
 	    	relojview.invalidate();
 	    }
@@ -36,7 +39,9 @@ public class ModoDificil extends modoPadre {
 			
 	    gridview.setAdapter(tableroAdapter);
 
-	    setListeners();
+	    if(!perdiste){
+			setListeners();
+			}
 	    
 	    }
 

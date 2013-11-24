@@ -25,7 +25,10 @@ public class ModoNormal extends modoPadre {
 	    	relojTask = new Reloj(this, data.getCont());
 	    	tableroAdapter = new TableroNormal(this, showTheMetrics(), data.getBoard(), data.getGraphics());
 	    	relojview.setText(data.getTime());
+	    	perdiste = data.getPerdiste();
+	    	if(!perdiste){
 	    	startTimer();
+	    	}
 	    	start = true;
 	    	relojview.invalidate();
 	    }
@@ -34,7 +37,9 @@ public class ModoNormal extends modoPadre {
 			
 	    gridview.setAdapter(tableroAdapter);
 
-	    setListeners();
+	    if(!perdiste){
+			setListeners();
+			}
 	    
 	    }
 

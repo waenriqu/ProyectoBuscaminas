@@ -21,7 +21,8 @@ public abstract class modoPadre extends Activity{
 	GridView gridview;
 	ImageAdapter tableroAdapter;
 	Reloj relojTask;
-	Boolean start = false;
+	Timer timer;
+	Boolean start = false, perdiste = false;
 	int nMinas;
 	
 	@Override
@@ -45,6 +46,7 @@ public abstract class modoPadre extends Activity{
 	            }
 	            if(tableroAdapter.getTablero()[position].getEsMina()){
 	            	tableroAdapter.changeImgAfterClicked(position, Casilla.mina);
+	            	detenerJuego();
 	            	gridview.invalidateViews();
 	            	return;
 	            }
@@ -151,7 +153,7 @@ public abstract class modoPadre extends Activity{
 		if(!start){
 			return null;
 		}
-	    final CargarDatos data = new CargarDatos(relojTask.getCont(),marcador.getText(),tableroAdapter.getTablero(), tableroAdapter.getGraphics());
+	    final CargarDatos data = new CargarDatos(relojTask.getCont(),marcador.getText(),tableroAdapter.getTablero(), tableroAdapter.getGraphics(), perdiste);
 	    return data;
 	}
 	
@@ -164,7 +166,7 @@ public abstract class modoPadre extends Activity{
 	
 	public void startTimer(){
 		final Handler handler = new Handler(); 
-		Timer timer = new Timer(); 
+		timer = new Timer(); 
 	    TimerTask testing = new TimerTask() {
 	        public void run() { 
 	            handler.post(new Runnable() {
@@ -180,5 +182,9 @@ public abstract class modoPadre extends Activity{
 	    timer.schedule(testing, 1000, 1000);
 	}
 
-
+	public void detenerJuego(){
+		gridview.setOnItemClickListener(null);
+		timer.cancel();
+		timer = null;
+	}
 }

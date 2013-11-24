@@ -5,12 +5,14 @@ public class CargarDatos {
 	CharSequence time;
 	Casilla [] board;
 	Integer [] graphics;
+	boolean perdiste;
 	
-	public CargarDatos(int c, CharSequence r, Casilla [] t, Integer[] g){
+	public CargarDatos(int c, CharSequence r, Casilla [] t, Integer[] g, boolean perdiste){
 		this.cont=c;
 		this.time=r;
 		this.board=t;
 		this.graphics=g;
+		this.perdiste = perdiste;
 	}
 
 	public int getCont() {
@@ -29,5 +31,7 @@ public class CargarDatos {
 		return graphics;
 	}
 
-	
+	public boolean getPerdiste(){
+		return perdiste;
+	}
 }

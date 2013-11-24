@@ -26,7 +26,10 @@ public class ModoFacil extends modoPadre {
 	    	relojTask = new Reloj(this, data.getCont());
 	    	tableroAdapter = new TableroFacil(this, showTheMetrics(), data.getBoard(), data.getGraphics());
 	    	relojview.setText(data.getTime());
+	    	perdiste = data.getPerdiste();
+	    	if(!perdiste){
 	    	startTimer();
+	    	}
 	    	start = true;
 	    	relojview.invalidate();
 	    }
@@ -36,8 +39,10 @@ public class ModoFacil extends modoPadre {
 		
 		
 		gridview = (GridView) findViewById(R.id.gridview);
-		gridview.setAdapter(tableroAdapter);	
+		gridview.setAdapter(tableroAdapter);
+		if(!perdiste){
 		setListeners();
+		}
 	    
 	    }
 
