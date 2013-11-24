@@ -296,15 +296,294 @@ public class TableroDificil extends ImageAdapter{
 	             
 	             
 	    };
+	 
+	 
+	 protected Casilla[] emptyBoard = {
+				//00
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //10
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //20
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //30
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //40
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //50
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //60
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //70
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //80
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //90
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //100
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //110
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //120
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //130
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //140
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //150
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //160
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //170
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //180
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //190
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //200
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //210
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //220
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //230
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //240
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //250
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //260
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //270
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //280
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //290
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //300
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //310
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //320
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //330
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //340
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //360
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //370
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //380
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //390
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //400
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //410
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //420
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //430
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //440
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //450
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            //470
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		            new Casilla(), new Casilla(),
+		          
+		             
+		    };
 	
 	//Crea un tablero difícil con celdas ocultas.
 	public TableroDificil(Context c, int imgSize){
 		super(c,imgSize);
 		mThumbIds = graphics;
-		tablero = new Casilla[graphics.length];
-		for(Casilla i: tablero){
-			i = new Casilla();
-			}
+		tablero = emptyBoard;
 		distX = 16;
 	}
 	
@@ -313,6 +592,8 @@ public class TableroDificil extends ImageAdapter{
 		super(c,imgSize);
 		tablero = array;
 		mThumbIds = graphics;
+		this.graphics = null;
+		this.emptyBoard = null;
 	}	
 
 }

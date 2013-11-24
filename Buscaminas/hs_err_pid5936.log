@@ -1,0 +1,131 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (javaClasses.cpp:136), pid=5936, tid=9384
+#  fatal error: Invalid layout of preloaded class
+#
+# JRE version:  (7.0_45-b18) (build )
+# Java VM: Java HotSpot(TM) Client VM (24.45-b08 mixed mode windows-x86 )
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00d1c400):  JavaThread "Unknown thread" [_thread_in_vm, id=9384, stack(0x00f10000,0x00f60000)]
+
+Stack: [0x00f10000,0x00f60000],  sp=0x00f5f5ec,  free space=317k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x18df51]
+V  [jvm.dll+0x187cc6]
+V  [jvm.dll+0x3586a]
+V  [jvm.dll+0x358f6]
+V  [jvm.dll+0x4400d]
+V  [jvm.dll+0x442be]
+V  [jvm.dll+0x9263a]
+V  [jvm.dll+0x929eb]
+V  [jvm.dll+0x13daf1]
+V  [jvm.dll+0x1605fc]
+V  [jvm.dll+0xc8ebf]
+C  [javaw.exe+0x13ce]
+C  [javaw.exe+0x1e40]
+C  [javaw.exe+0xa5b1]
+C  [javaw.exe+0xa63b]
+C  [kernel32.dll+0x133aa]
+C  [ntdll.dll+0x39f72]
+C  [ntdll.dll+0x39f45]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00d1c400 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=9384, stack(0x00f10000,0x00f60000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.802 loading class 0x00d59908 done
+Event: 0.802 loading class 0x00d59398 done
+Event: 0.802 loading class 0x00d59378
+Event: 0.803 loading class 0x00d606a0
+Event: 0.820 loading class 0x00d606a0 done
+Event: 0.820 loading class 0x00d606d0
+Event: 0.820 loading class 0x00d606d0 done
+Event: 0.820 loading class 0x00d60700
+Event: 0.820 loading class 0x00d60700 done
+Event: 0.821 loading class 0x00d59378 done
+
+
+Dynamic libraries:
+0x01240000 - 0x0126f000 	C:\Program Files (x86)\Java\jre7\bin\javaw.exe
+0x77560000 - 0x776e0000 	C:\Windows\SysWOW64\ntdll.dll
+0x766b0000 - 0x767c0000 	C:\Windows\syswow64\kernel32.dll
+0x767f0000 - 0x76837000 	C:\Windows\syswow64\KERNELBASE.dll
+0x76f30000 - 0x76fd0000 	C:\Windows\syswow64\ADVAPI32.dll
+0x76e70000 - 0x76f1c000 	C:\Windows\syswow64\msvcrt.dll
+0x768d0000 - 0x768e9000 	C:\Windows\SysWOW64\sechost.dll
+0x768f0000 - 0x769e0000 	C:\Windows\syswow64\RPCRT4.dll
+0x74fb0000 - 0x75010000 	C:\Windows\syswow64\SspiCli.dll
+0x74fa0000 - 0x74fac000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x76450000 - 0x76550000 	C:\Windows\syswow64\USER32.dll
+0x761c0000 - 0x76250000 	C:\Windows\syswow64\GDI32.dll
+0x76850000 - 0x7685a000 	C:\Windows\syswow64\LPK.dll
+0x76120000 - 0x761bd000 	C:\Windows\syswow64\USP10.dll
+0x74840000 - 0x749de000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2\COMCTL32.dll
+0x76870000 - 0x768c7000 	C:\Windows\syswow64\SHLWAPI.dll
+0x76cf0000 - 0x76d50000 	C:\Windows\system32\IMM32.DLL
+0x76d60000 - 0x76e2c000 	C:\Windows\syswow64\MSCTF.dll
+0x6db40000 - 0x6dbff000 	C:\Program Files (x86)\Java\jre7\bin\msvcr100.dll
+0x6a210000 - 0x6a590000 	C:\Program Files (x86)\Java\jre7\bin\client\jvm.dll
+0x71a20000 - 0x71a27000 	C:\Windows\system32\WSOCK32.dll
+0x76a00000 - 0x76a35000 	C:\Windows\syswow64\WS2_32.dll
+0x76e60000 - 0x76e66000 	C:\Windows\syswow64\NSI.dll
+0x73ee0000 - 0x73f12000 	C:\Windows\system32\WINMM.dll
+0x76ce0000 - 0x76ce5000 	C:\Windows\syswow64\PSAPI.DLL
+0x6c0b0000 - 0x6c0bc000 	C:\Program Files (x86)\Java\jre7\bin\verify.dll
+0x6b210000 - 0x6b230000 	C:\Program Files (x86)\Java\jre7\bin\java.dll
+0x6b230000 - 0x6b243000 	C:\Program Files (x86)\Java\jre7\bin\zip.dll
+0x6f590000 - 0x6f67b000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 -Xbootclasspath:C:\Users\WILSON\AppData\Local\Android\android-sdk\platforms\android-19\android.jar;C:\Users\WILSON\AppData\Local\Android\android-sdk\add-ons\addon-google_apis-google-19\libs\effects.jar;C:\Users\WILSON\AppData\Local\Android\android-sdk\add-ons\addon-google_apis-google-19\libs\usb.jar;C:\Users\WILSON\AppData\Local\Android\android-sdk\add-ons\addon-google_apis-google-19\libs\maps.jar 
+java_command: com.example.practica1.ImageAdapter
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Program Files (x86)\Haskell\bin;C:\Program Files (x86)\Haskell Platform\2012.4.0.0\lib\extralibs\bin;C:\Program Files (x86)\Haskell Platform\2012.4.0.0\bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Sony\VAIO Startup Setting Tool;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\MATLAB\R2008a\bin;C:\Program Files\MATLAB\R2008a\bin\win64;C:\Program Files (x86)\MiKTeX 2.9\miktex\bin\;C:\Program Files (x86)\Haskell Platform\2012.4.0.0\mingw\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\GNU\GnuPG\pub;C:\Users\WILSON\AppData\Roaming\cabal\bin;C:\Users\WILSON\Downloads\eclipse-SDK-4.2.1-win32\eclipse;
+USERNAME=WILSON
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 4140912k(1381936k free), swap 8279964k(3813532k free)
+
+vm_info: Java HotSpot(TM) Client VM (24.45-b08) for windows-x86 JRE (1.7.0_45-b18), built on Oct  8 2013 06:02:43 by "java_re" with unknown MS VC++:1600
+
+time: Sat Nov 23 19:50:14 2013
+elapsed time: 1 seconds
+

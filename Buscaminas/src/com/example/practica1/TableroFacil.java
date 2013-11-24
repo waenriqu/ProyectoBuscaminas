@@ -59,14 +59,66 @@ public class TableroFacil extends ImageAdapter{
              
     };
 	
+	protected Casilla[] emptyBoard = {
+            //00
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            //10
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            //20
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            //30
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            //40
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            //50
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            //60
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            //70
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            new Casilla(), new Casilla(),
+            //80
+            new Casilla()
+             
+             
+    };
+	
 	//Crea un tablero fácil con celdas ocultas.
 	public TableroFacil(Context c, int imgSize){
 		super(c,imgSize);
 		mThumbIds = graphics;
-		tablero = new Casilla[graphics.length];
-		for(Casilla i: tablero){
-			i = new Casilla();
-			}
+		tablero = emptyBoard;
 		distX = 9;
 	}
 	
@@ -75,6 +127,8 @@ public class TableroFacil extends ImageAdapter{
 		super(c,imgSize);
 		tablero = array;
 		mThumbIds = graphics;
+		this.graphics = null;
+		this.emptyBoard = null;
 	}
 	
 	

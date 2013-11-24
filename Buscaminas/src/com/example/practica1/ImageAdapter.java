@@ -1,5 +1,6 @@
 package com.example.practica1;
 
+
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,6 @@ public class ImageAdapter extends BaseAdapter{
 	private int imgSize;
 	protected Casilla[] tablero;
 	protected Integer[] mThumbIds;
-	private int clicked = R.drawable.mina;
 	private int longclicked = R.drawable.bandera;
 	protected int distX;
 	
@@ -35,6 +35,23 @@ public class ImageAdapter extends BaseAdapter{
 	public int getCount() {
 		// TODO Auto-generated method stub
 		return tablero.length;
+	}
+	
+	//Llena de minas el tablero de forma aleatoria. Primero verfica que la casilla no tenga mina para luego colocarla. También evita colocar minas en la posición donde se dio el primer click
+	public void generaMina(int nminas, int pos){
+		
+	int r; 
+
+	
+	
+	for(int i = 0; i<nminas; i++){
+		do{
+			r = ((int)(Math.random()*tablero.length));
+		}while(tablero[r].getEsMina() || r == pos);
+		
+		tablero[r].setEsMina(true);
+	}
+	
 	}
 
 	@Override
@@ -68,8 +85,59 @@ public class ImageAdapter extends BaseAdapter{
 
 	
 	//Pone la imagen de la mina.
-	public void changeImgAfterClicked(int position){
-		mThumbIds[position]=clicked;
+	public void changeImgAfterClicked(int position, int tipo){
+		switch (tipo){
+		case 0:
+			tablero[position].cambiarTipo(0);
+			tablero[position].cambiarEstado();
+			mThumbIds[position] = R.drawable.mina0;
+			break;
+		case 1:
+			tablero[position].cambiarTipo(1);
+			tablero[position].cambiarEstado();
+			mThumbIds[position] = R.drawable.mina1;
+			break;
+		case 2:
+			tablero[position].cambiarTipo(2);
+			tablero[position].cambiarEstado();
+			mThumbIds[position] = R.drawable.mina2;
+			break;
+		case 3:
+			tablero[position].cambiarTipo(3);
+			tablero[position].cambiarEstado();
+			mThumbIds[position] = R.drawable.mina3;
+			break;
+		case 4:
+			tablero[position].cambiarTipo(4);
+			tablero[position].cambiarEstado();
+			mThumbIds[position] = R.drawable.mina4;
+			break;
+		case 5:
+			tablero[position].cambiarTipo(5);
+			tablero[position].cambiarEstado();
+			mThumbIds[position] = R.drawable.mina5;
+			break;
+		case 6:
+			tablero[position].cambiarTipo(6);
+			tablero[position].cambiarEstado();
+			mThumbIds[position] = R.drawable.mina6;
+			break;
+		case 7:
+			tablero[position].cambiarTipo(7);
+			tablero[position].cambiarEstado();
+			mThumbIds[position] = R.drawable.mina7;
+			break;
+		case 8:
+			tablero[position].cambiarTipo(8);
+			tablero[position].cambiarEstado();
+			mThumbIds[position] = R.drawable.mina8;
+			break;
+		case Casilla.mina:
+			tablero[position].cambiarTipo(Casilla.mina);
+			tablero[position].cambiarEstado();
+			mThumbIds[position] = R.drawable.mina;
+			break;
+		}
 	}
 	
 	
