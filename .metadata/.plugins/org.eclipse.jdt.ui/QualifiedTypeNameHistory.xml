@@ -6,5 +6,7 @@
 <fullyQualifiedTypeName name="android.widget.LinearLayout"/>
 <fullyQualifiedTypeName name="android.app.ActionBar.LayoutParams"/>
 <fullyQualifiedTypeName name="android.graphics.Color"/>
+<fullyQualifiedTypeName name="com.example.practica1.R.id"/>
 <fullyQualifiedTypeName name="android.widget.ImageButton"/>
+<fullyQualifiedTypeName name="com.example.practica1.R.drawable"/>
 </qualifiedTypeNameHistroy>
