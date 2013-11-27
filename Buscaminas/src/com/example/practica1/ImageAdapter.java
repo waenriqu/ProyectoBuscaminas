@@ -142,7 +142,11 @@ public class ImageAdapter extends BaseAdapter{
 	
 	//Pone la imagen de la bandera.
 	public void changeImgAfterLongClicked(int position){
-		mThumbIds[position]=longclicked;
+		if(mThumbIds[position]==longclicked){
+			mThumbIds[position] = R.drawable.oculto;
+		} else{
+			mThumbIds[position]=longclicked;
+		}
 	}
 	
 	

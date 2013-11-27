@@ -127,7 +127,7 @@ public abstract class modoPadre extends Activity{
 		 switch(density)
 		 {
 		 case DisplayMetrics.DENSITY_LOW:
-			return 24;
+			return 27;
 		case DisplayMetrics.DENSITY_MEDIUM:
 			return 36;
 		 case DisplayMetrics.DENSITY_HIGH:
