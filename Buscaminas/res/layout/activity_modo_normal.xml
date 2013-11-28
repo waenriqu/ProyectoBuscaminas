@@ -25,6 +25,8 @@
     android:layout_below="@id/resetButton"
     android:columnWidth="36dp"
     android:gravity="center"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
     android:horizontalSpacing="0dp"
     android:numColumns="16"
     android:stretchMode="none"

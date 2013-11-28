@@ -185,12 +185,12 @@ public class ImageAdapter extends BaseAdapter{
 	 		
 	 		
 	        
-	 		if((pos7>0)&&((pos7%distX)-(pos8%distX) == -1)&&(tablero[pos7].getEsMina())){
+	 		if((pos7>=0)&&((pos7%distX)-(pos8%distX) == -1)&&(tablero[pos7].getEsMina())){
 	 		numMinasLados++;
 	 		}
 	 		
 	 		
-	 		if((pos8>0)&&(tablero[pos8].getEsMina())){
+	 		if((pos8>=0)&&(tablero[pos8].getEsMina())){
 	 		numMinasLados++;
 	 		}
 	 		
@@ -199,7 +199,7 @@ public class ImageAdapter extends BaseAdapter{
 	 		numMinasLados++;
 	 		}
 	 		
-	 		if((pos4>0)&&(pos4%distX-posicion%distX==-1)&&(tablero[pos4].getEsMina())){
+	 		if((pos4>=0)&&(pos4%distX-posicion%distX==-1)&&(tablero[pos4].getEsMina())){
 	 		numMinasLados++;
 	 		}
 	 		
