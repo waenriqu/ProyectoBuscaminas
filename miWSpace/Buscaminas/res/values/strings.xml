@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Practica 1</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Sekai">Buscaminas</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_facil">fácil</string>
+    <string name="button_normal">Normal</string>
+    <string name="button_dificil">Difícil</string>
+    <string name="title_activity_display_message">My Message</string>
+    <string name="title_activity_grid_demo">GridDemo</string>
+    <string name="resetBdesc">Resetea el juego</string>
+    <string name="title_activity_modo_normal">ModoNormal</string>
+    <string name="title_activity_modo_dificil">ModoDificil</string>
+    <string name="reloj">00:00</string>
+
+</resources>
