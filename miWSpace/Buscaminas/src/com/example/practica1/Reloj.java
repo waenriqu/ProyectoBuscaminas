@@ -7,20 +7,20 @@ public class Reloj {
 	public String minutos = "00", segundos = "00";
 	int cont = 0;
 	
-	public Activity tablero;
+	public ModoPadre activity;
 	
-	Reloj(Activity tablero){
-		this.tablero = tablero;
+	Reloj(ModoPadre activity){
+		this.activity = activity;
 	}
 	
-	Reloj(Activity tablero, int cont){
-		this.tablero = tablero;
+	Reloj(ModoPadre activity, int cont){
+		this.activity = activity;
 		this.cont = cont;
 	}
 
 	public void run() {
 		// TODO Auto-generated method stub
-		TextView relojview = (TextView)tablero.findViewById(R.id.tiempoview);
+		TextView relojview = (TextView)activity.findViewById(R.id.tiempoview);
 		minutos = calcularMinutos(++cont);
 		segundos = calcularSegundos(cont);
 		relojview.setText(minutos + ":" + segundos);
@@ -49,6 +49,25 @@ public class Reloj {
 
 	public int getCont() {
 		return cont;
+	}
+
+	public void subirBarrier() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public double getBarrier() {
+		return 0;
+	}
+
+	public void explosionBarrier() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void subirBarrierBandera() {
+		// TODO Auto-generated method stub
+		
 	}
 
 

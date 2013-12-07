@@ -22,31 +22,58 @@ public final class R {
     }
     public static final class drawable {
         public static final int bandera=0x7f020000;
-        public static final int clicked=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int mina=0x7f020003;
-        public static final int mina0=0x7f020004;
-        public static final int mina1=0x7f020005;
-        public static final int mina2=0x7f020006;
-        public static final int mina3=0x7f020007;
-        public static final int mina4=0x7f020008;
-        public static final int mina5=0x7f020009;
-        public static final int mina6=0x7f02000a;
-        public static final int mina7=0x7f02000b;
-        public static final int mina8=0x7f02000c;
-        public static final int oculto=0x7f02000d;
-        public static final int reset=0x7f02000e;
-        public static final int yoonsad=0x7f02000f;
+        public static final int bar00=0x7f020001;
+        public static final int bar10=0x7f020002;
+        public static final int bar100=0x7f020003;
+        public static final int bar30=0x7f020004;
+        public static final int bar40=0x7f020005;
+        public static final int bar50=0x7f020006;
+        public static final int bar60=0x7f020007;
+        public static final int bar70=0x7f020008;
+        public static final int bar80=0x7f020009;
+        public static final int bar90=0x7f02000a;
+        public static final int clicked=0x7f02000b;
+        public static final int explotado=0x7f02000c;
+        public static final int ic_launcher=0x7f02000d;
+        public static final int mina=0x7f02000e;
+        public static final int mina0=0x7f02000f;
+        public static final int mina1=0x7f020010;
+        public static final int mina2=0x7f020011;
+        public static final int mina3=0x7f020012;
+        public static final int mina4=0x7f020013;
+        public static final int mina5=0x7f020014;
+        public static final int mina6=0x7f020015;
+        public static final int mina7=0x7f020016;
+        public static final int mina8=0x7f020017;
+        public static final int oculto=0x7f020018;
+        public static final int p0=0x7f020019;
+        public static final int p108=0x7f02001a;
+        public static final int p12=0x7f02001b;
+        public static final int p120=0x7f02001c;
+        public static final int p132=0x7f02001d;
+        public static final int p144=0x7f02001e;
+        public static final int p24=0x7f02001f;
+        public static final int p36=0x7f020020;
+        public static final int p48=0x7f020021;
+        public static final int p60=0x7f020022;
+        public static final int p72=0x7f020023;
+        public static final int p84=0x7f020024;
+        public static final int p96=0x7f020025;
+        public static final int reset=0x7f020026;
+        public static final int yoonsad=0x7f020027;
     }
     public static final class id {
-        public static final int ScrollView01=0x7f080007;
-        public static final int action_settings=0x7f080008;
+        public static final int ScrollView01=0x7f080008;
+        public static final int action_settings=0x7f08000b;
+        public static final int barrier=0x7f080009;
         public static final int buttonDificil=0x7f080003;
         public static final int buttonFacil=0x7f080001;
         public static final int buttonNormal=0x7f080002;
-        public static final int gridview=0x7f080005;
-        public static final int resetButton=0x7f080004;
-        public static final int tiempoview=0x7f080006;
+        public static final int buttonRemix=0x7f080004;
+        public static final int gridview=0x7f080006;
+        public static final int resetButton=0x7f080005;
+        public static final int status=0x7f08000a;
+        public static final int tiempoview=0x7f080007;
         public static final int title=0x7f080000;
     }
     public static final class layout {
@@ -58,6 +85,7 @@ public final class R {
         public static final int activity_modo_facilscroll=0x7f030005;
         public static final int activity_modo_normal=0x7f030006;
         public static final int activity_modo_normalscroll=0x7f030007;
+        public static final int activity_modo_remix=0x7f030008;
     }
     public static final class menu {
         public static final int display_message=0x7f070000;
@@ -65,6 +93,7 @@ public final class R {
         public static final int main=0x7f070002;
         public static final int modo_dificil=0x7f070003;
         public static final int modo_normal=0x7f070004;
+        public static final int modo_remix=0x7f070005;
     }
     public static final class string {
         public static final int Sekai=0x7f050003;
@@ -73,6 +102,7 @@ public final class R {
         public static final int button_dificil=0x7f050007;
         public static final int button_facil=0x7f050005;
         public static final int button_normal=0x7f050006;
+        public static final int button_remix=0x7f05000f;
         public static final int edit_message=0x7f050004;
         public static final int hello_world=0x7f050002;
         public static final int reloj=0x7f05000d;
@@ -81,6 +111,7 @@ public final class R {
         public static final int title_activity_grid_demo=0x7f050009;
         public static final int title_activity_modo_dificil=0x7f05000c;
         public static final int title_activity_modo_normal=0x7f05000b;
+        public static final int title_activity_modo_remix=0x7f05000e;
     }
     public static final class style {
         /** 

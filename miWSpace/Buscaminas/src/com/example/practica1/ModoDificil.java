@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.GridView;
 import android.widget.TextView;
 
-public class ModoDificil extends modoPadre {
+public class ModoDificil extends ModoPadre {
 
 	
 	

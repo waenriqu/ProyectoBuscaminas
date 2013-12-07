@@ -10,7 +10,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.TextView;
-public class ModoNormal extends modoPadre {
+public class ModoNormal extends ModoPadre {
 	
 	
 	@Override

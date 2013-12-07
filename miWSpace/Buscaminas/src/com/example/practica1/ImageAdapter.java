@@ -149,6 +149,20 @@ public class ImageAdapter extends BaseAdapter{
 		}
 	}
 	
+	public boolean changeImgAfterLongClickedRemixed(int position){
+		if (mThumbIds[position]==R.drawable.oculto){
+			mThumbIds[position]=longclicked;
+		    return true;
+		}
+		return false;
+	}
+	
+	public void changeImgAfterExplosion(int position){
+			mThumbIds[position] = R.drawable.explotado;
+			descubrirModelCasilla(position);
+			revelados--;
+	}
+	
 	
 	//Pone todo en el tablero como oculto.
 	
@@ -322,6 +336,10 @@ public class ImageAdapter extends BaseAdapter{
 
 	public int getDistX() {
 		return distX;
+	}
+	
+	public int getRevelados(){
+		return revelados;
 	}
 	}
 

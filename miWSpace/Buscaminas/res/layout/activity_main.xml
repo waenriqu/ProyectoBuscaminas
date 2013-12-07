@@ -37,7 +37,17 @@
         android:text="@string/button_dificil"
         android:layout_below="@id/buttonNormal"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:onClick="modoDificil" />
+    
+    <Button
+        android:id="@+id/buttonRemix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_remix"
+        android:layout_below="@id/buttonDificil"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:onClick="modoRemix" />
 </RelativeLayout>
 

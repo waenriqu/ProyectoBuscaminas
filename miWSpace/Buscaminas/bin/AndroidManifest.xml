@@ -50,6 +50,10 @@
             android:name="com.example.practica1.ModoDificil"
             android:label="@string/title_activity_modo_dificil" >
         </activity>
+        <activity
+            android:name="com.example.practica1.ModoRemix"
+            android:label="@string/title_activity_modo_remix" >
+        </activity>
     </application>
 
 </manifest>

@@ -19,7 +19,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 
-public abstract class modoPadre extends Activity{
+public abstract class ModoPadre extends Activity{
 	GridView gridview;
 	ImageAdapter tableroAdapter;
 	Reloj relojTask;

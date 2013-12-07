@@ -15,5 +15,7 @@
     <string name="title_activity_modo_normal">ModoNormal</string>
     <string name="title_activity_modo_dificil">ModoDificil</string>
     <string name="reloj">00:00</string>
+    <string name="title_activity_modo_remix">ModoRemix</string>
+    <string name="button_remix">Remix</string>
 
 </resources>
