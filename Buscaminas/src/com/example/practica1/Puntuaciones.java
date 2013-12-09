@@ -1,6 +1,5 @@
 package com.example.practica1;
 
-import java.util.Vector;
 
 import android.content.Context;
 import android.database.Cursor;
