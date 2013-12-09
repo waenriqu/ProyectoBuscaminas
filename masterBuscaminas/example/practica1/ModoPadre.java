@@ -1,28 +1,23 @@
-package com.example.practica1;
+package com.example.buscaminasremix;
 
-import java.io.IOException;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.ActionBar.LayoutParams;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
@@ -78,7 +73,7 @@ public abstract class ModoPadre extends Activity{
 	            	detenerJuego();
 	            	actualizarCarita(true);
 	            	playAudio(mpVictoria);
-	            	resultScreen();
+	            	//resultScreen();
 	            }
 	        }
 
@@ -138,7 +133,7 @@ public abstract class ModoPadre extends Activity{
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.grid_demo, menu);
+		getMenuInflater().inflate(R.menu.modo_padre, menu);
 		return true;
 	}
 	

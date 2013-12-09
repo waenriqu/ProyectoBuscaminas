@@ -1,5 +1,4 @@
-package com.example.practica1;
-
+package com.example.buscaminasremix;
 public class Casilla {
     int tipo;
     Boolean oculta;

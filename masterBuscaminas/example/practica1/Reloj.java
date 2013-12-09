@@ -1,6 +1,5 @@
-package com.example.practica1;
+package com.example.buscaminasremix;
 
-import android.app.Activity;
 import android.widget.TextView;
 
 public class Reloj {

@@ -1,9 +1,5 @@
-package com.example.practica1;
-
-
+package com.example.buscaminasremix;
 import android.content.Context;
-import android.content.res.AssetFileDescriptor;
-import android.media.MediaPlayer;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
