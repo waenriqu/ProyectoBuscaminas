@@ -61,6 +61,7 @@ public class ModoNormal extends ModoPadre {
 		
 	public void resetGame(View view){
 		Intent intent = new Intent(this, ModoNormal.class);
+		deleteMP();
 		startActivity(intent);
 		finish();
 	}

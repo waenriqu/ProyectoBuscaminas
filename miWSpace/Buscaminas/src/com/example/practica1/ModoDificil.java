@@ -63,6 +63,7 @@ public class ModoDificil extends ModoPadre {
 	
 	public void resetGame(View view){
 		Intent intent = new Intent(this, ModoDificil.class);
+		deleteMP();
 		startActivity(intent);
 		finish();
 	}

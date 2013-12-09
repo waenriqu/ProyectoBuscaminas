@@ -17,5 +17,9 @@
     <string name="reloj">00:00</string>
     <string name="title_activity_modo_remix">ModoRemix</string>
     <string name="button_remix">Remix</string>
+    <string name="comboempty"></string>
+    <string name="x0">x0</string>
+    <string name="title_activity_result_screen">ResultScreen</string>
+    <string name="listo">Listo</string>
 
 </resources>

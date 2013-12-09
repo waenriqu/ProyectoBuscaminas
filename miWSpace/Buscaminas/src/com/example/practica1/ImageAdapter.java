@@ -2,6 +2,8 @@ package com.example.practica1;
 
 
 import android.content.Context;
+import android.content.res.AssetFileDescriptor;
+import android.media.MediaPlayer;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -341,6 +343,8 @@ public class ImageAdapter extends BaseAdapter{
 	public int getRevelados(){
 		return revelados;
 	}
+	
+	
 	}
 
 	

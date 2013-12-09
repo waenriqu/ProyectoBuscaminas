@@ -1,19 +1,28 @@
 package com.example.practica1;
 
+import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ActionBar.LayoutParams;
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
@@ -26,10 +35,18 @@ public abstract class ModoPadre extends Activity{
 	Timer timer;
 	Boolean start = false, finish = false;
 	int nMinas;
+	final int audioBandera = R.raw.bandera, audioVictoria = R.raw.victoria, audioDeactivate = R.raw.deactivated;
+	final int audioDerrota = R.raw.gameover;
+	MediaPlayer mpBandera, mpVictoria, mpDeactivate, mpDerrota;
+	public final static String TIEMPO_MESSAGE = "com.example.myfirstapp.TIEMPO";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		mpBandera = newAudio(audioBandera);
+		mpVictoria = newAudio(audioVictoria);
+		mpDerrota = newAudio(audioDerrota);
+		
 		}
 	
 	protected void setListeners(){
@@ -50,6 +67,7 @@ public abstract class ModoPadre extends Activity{
 	            	detenerJuego();
 	            	actualizarCarita(false);
 	            	gridview.invalidateViews();
+	            	playAudio(mpDerrota);
 	            	return;
 	            }
 	            
@@ -59,6 +77,8 @@ public abstract class ModoPadre extends Activity{
 	            if(tableroAdapter.isVictoria()){
 	            	detenerJuego();
 	            	actualizarCarita(true);
+	            	playAudio(mpVictoria);
+	            	resultScreen();
 	            }
 	        }
 
@@ -73,6 +93,7 @@ public abstract class ModoPadre extends Activity{
 					return true;
 				}
 				tableroAdapter.changeImgAfterLongClicked(position);
+				playAudio(mpBandera);
 	            gridview.invalidateViews();
 				return true;
 			}
@@ -160,6 +181,7 @@ public abstract class ModoPadre extends Activity{
 		if(!start){
 			return null;
 		}
+		deleteMP();
 	    final CargarDatos data = new CargarDatos(relojTask.getCont(),marcador.getText(),tableroAdapter.getTablero(), tableroAdapter.getGraphics(), finish, tableroAdapter.revelados);
 	    return data;
 	}
@@ -219,4 +241,63 @@ public abstract class ModoPadre extends Activity{
 			gravityCenterAPI8();
 		}
 	}
+
+	public void resetCombo() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public MediaPlayer newAudio(int file){
+		try{
+			return MediaPlayer.create(getApplicationContext(), file);
+		} 	catch(Exception e){
+			Toast.makeText(ModoPadre.this, "Error "+Log.getStackTraceString(e), Toast.LENGTH_SHORT).show();
+			return null;
+		}
+	}
+	
+	public void playAudio(MediaPlayer mp){
+		try{
+			if(mp.isPlaying()){
+				mp.pause();
+				mp.seekTo(0);
+				mp.start();
+			} else{
+				mp.start();
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			Toast.makeText(ModoPadre.this, "Error "+Log.getStackTraceString(e), Toast.LENGTH_LONG).show();
+		}
+	}
+	
+	public void deleteMP(){
+		if(mpBandera != null){
+			mpBandera.stop();
+			mpBandera.release();
+		}
+		if(mpVictoria != null){
+			mpVictoria.stop();
+			mpVictoria.release();
+		}
+		if(mpDerrota != null){
+			mpDerrota.stop();
+			mpDerrota.release();
+		}
+	}
+	
+	@Override
+	public void onBackPressed() {
+	    deleteMP();
+	    finish();
+	    return;
+	}  
+	
+	public void resultScreen(){
+		Intent intent = new Intent(this, ResultScreen.class);
+		TextView tv = (TextView) findViewById(R.id.tiempoview);
+		 intent.putExtra(TIEMPO_MESSAGE, tv.getText().toString());
+		startActivity(intent);
+	}
+	
 }

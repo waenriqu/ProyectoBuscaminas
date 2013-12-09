@@ -60,6 +60,7 @@ public class ModoFacil extends ModoPadre {
 	
 	public void resetGame(View view){
 		Intent intent = new Intent(this, ModoFacil.class);
+		deleteMP();
 		startActivity(intent);
 		finish();
 	}

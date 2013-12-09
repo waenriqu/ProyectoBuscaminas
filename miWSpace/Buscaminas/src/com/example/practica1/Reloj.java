@@ -70,5 +70,10 @@ public class Reloj {
 		
 	}
 
+	public void updateBarrier() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }
