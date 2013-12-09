@@ -1,53 +1,60 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<RelativeLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal" >
-    <TextView 
+    <ImageView 
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:textSize="24sp"
-        android:text="@string/Sekai" />
-    <Button
+        android:src="@drawable/title" />
+    <ImageView
         android:id="@+id/buttonFacil"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="@string/button_facil"
         android:layout_below="@id/title"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
+    	android:src="@drawable/boton1p"
         android:onClick="modoFacil" />
-    <Button
+    <ImageView
         android:id="@+id/buttonNormal"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/button_normal"
         android:layout_below="@id/buttonFacil"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
+        android:src="@drawable/boton2p"
         android:onClick="modoNormal" />
-    <Button
+    <ImageView
         android:id="@+id/buttonDificil"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/button_dificil"
         android:layout_below="@id/buttonNormal"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
+        android:src="@drawable/boton3p"
         android:onClick="modoDificil" />
     
-    <Button
+    <ImageView
         android:id="@+id/buttonRemix"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/button_remix"
         android:layout_below="@id/buttonDificil"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
+        android:src="@drawable/boton4p"
         android:onClick="modoRemix" />
 </RelativeLayout>
+</ScrollView>
 
