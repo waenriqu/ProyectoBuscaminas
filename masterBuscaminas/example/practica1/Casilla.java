@@ -5,6 +5,7 @@ public class Casilla {
     Boolean esMina;
     public static final int mina = 9;
     
+    
     public Casilla(){
         tipo = 0;
         oculta = true;

@@ -1,7 +1,15 @@
 package com.example.buscaminasremix;
 
 import android.content.Context;
-
+/**
+ * Esta clase hereda de ImageAdapter. simplemente crea el tablero con las dimensiones
+ * y número de minas que corresponden al modo normal para que la clase ImageAdapter
+ * se encargue de las reglas de juego y de crear el View. Ofrece un constructor adicional
+ * para crear tableros con valores guardados anteriormente 
+ * 
+ * @author      Gabriel Aumala
+ * @author		Wilson Enriquez
+ */
 public class TableroNormal extends ImageAdapter{
 	 protected Integer[] graphics = {
 	            //00
@@ -322,7 +330,14 @@ public class TableroNormal extends ImageAdapter{
 	             
 	             
 	    };
-	//Crea un tablero normal con celdas ocultas.
+	 /**
+		 * Crea un tablero normal con casillas ocultas nuevas. Usa un arreglo de imagenes nuevo,
+		 * le asigna el valor de 16 al número de columnas del tablero, inicializa en cero
+		 * el número de casillas reveladas, y asigna el valor de 40 al número de minas del tablero.
+		 * @param  context El contexto de la actividad que usará el tablero
+		 * @param imgSize El tamaño máximo de las casillas del tablero
+		 * @return  Tablero normal con casillas ocultas.
+		 */	
 	public TableroNormal(Context c, int imgSize){
 		super(c,imgSize);
 		mThumbIds = graphics;
@@ -332,8 +347,17 @@ public class TableroNormal extends ImageAdapter{
 		nMinas = 40;
 		
 	}
-	
-	//Crea un tablero normal con celdas guardadas anteriormente.
+	 /**
+	 * Crea un tablero normal con casillas guardadas anteriormente. Le asigna el valor de 16 
+	 * al número de columnas del tablero, inicializa en cero el número de casillas reveladas, 
+	 * y asigna el valor de 40 al número de minas del tablero.
+	 * @param  context El contexto de la actividad que usará el tablero
+	 * @param imgSize El tamaño máximo de las casillas del tablero
+	 * @param array El arreglo de casillas (Model) guardado anteriormente
+	 * @param graphics El arreglo de imágenes (View) guardado anteriormente
+	 * @pàram revelados El número de casillas reveladas guardado anteriormente
+	 * @return  Tablero normal con casillas guardadas anteriormente.
+	 */	
 	public TableroNormal(Context c, int imgSize, Casilla[] array, Integer[] graphics, int revelados){
 		super(c,imgSize);
 		tablero = array;

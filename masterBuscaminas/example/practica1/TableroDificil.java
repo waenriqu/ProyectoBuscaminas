@@ -1,7 +1,15 @@
 package com.example.buscaminasremix;
 
 import android.content.Context;
-
+/**
+ * Esta clase hereda de ImageAdapter. simplemente crea el tablero con las dimensiones
+ * y número de minas que corresponden al modo difícil para que la clase ImageAdapter
+ * se encargue de las reglas de juego y de crear el View. Ofrece un constructor adicional
+ * para crear tableros con valores guardados anteriormente 
+ * 
+ * @author      Gabriel Aumala
+ * @author		Wilson Enriquez
+ */
 public class TableroDificil extends ImageAdapter{
 	
 	 protected Integer[] graphics = {
@@ -582,8 +590,14 @@ public class TableroDificil extends ImageAdapter{
 		            new Casilla(), new Casilla()
 		             
 		    };
-	
-	//Crea un tablero difícil con celdas ocultas.
+	 /**
+		 * Crea un tablero difícil con casillas ocultas nuevas. Usa un arreglo de imagenes nuevo,
+		 * le asigna el valor de 16 al número de columnas del tablero, inicializa en cero
+		 * el número de casillas reveladas, y asigna el valor de 99 al número de minas del tablero.
+		 * @param  context El contexto de la actividad que usará el tablero
+		 * @param imgSize El tamaño máximo de las casillas del tablero
+		 * @return  Tablero difícil con casillas ocultas.
+		 */	
 	public TableroDificil(Context c, int imgSize){
 		super(c,imgSize);
 		mThumbIds = graphics;
@@ -593,7 +607,17 @@ public class TableroDificil extends ImageAdapter{
 		nMinas = 99;
 	}
 	
-	//Crea un tablero difícil con celdas guardadas anteriormente.
+	/**
+	 * Crea un tablero difícil con casillas guardadas anteriormente. Le asigna el valor de 16 
+	 * al número de columnas del tablero, inicializa en cero el número de casillas reveladas, 
+	 * y asigna el valor de 99 al número de minas del tablero.
+	 * @param  context El contexto de la actividad que usará el tablero
+	 * @param imgSize El tamaño máximo de las casillas del tablero
+	 * @param array El arreglo de casillas (Model) guardado anteriormente
+	 * @param graphics El arreglo de imágenes (View) guardado anteriormente
+	 * @pàram revelados El número de casillas reveladas guardado anteriormente
+	 * @return  Tablero difícil con casillas guardadas anteriormente.
+	 */	
 	public TableroDificil(Context c, int imgSize, Casilla[] array, Integer[] graphics, int revelados){
 		super(c,imgSize);
 		tablero = array;

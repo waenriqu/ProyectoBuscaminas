@@ -2,6 +2,7 @@ package com.example.buscaminasremix;
 
 
 import android.annotation.SuppressLint;
+
 import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -10,9 +11,24 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.TextView;
+
+/**
+ * ModoNormal hereda de ModoPadre. Simplemente se encarga de inicializar el juego
+ * de acuerdo a las carecterísticas del modo normal siguiendo el procedimiento
+ * modelado por los métodos de ModoPadre.
+ * 
+ * @author      Gabriel Aumala
+ * @author		Wilson Enriquez
+ */
 public class ModoNormal extends ModoPadre {
 	
-	
+	/**
+	 * Inicializa el modo normal. Asigna el número de minas pertinente. Revisa si hay datos guardados
+	 * que se deben de cargar, de lo contrario crea todos los objetos como el reloj y el tablero y los
+	 * inicializa. También decide si es necesario usar barras de scrolling horizontal. Si la partida no 
+	 * ha terminado coloca los listeners de Click y LongClick.
+	 * @param  savedInstanceState Bundle con los últimos datos suministrados
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);		
@@ -58,14 +74,23 @@ public class ModoNormal extends ModoPadre {
 		return true;
 	}
 	
-		
+	/**
+	 * Resetea el juego. Comienza una nueva actividad idéntica a esta, pero antes
+	 *　libera la memoria de los efectos de sonidos y cierra la actividad actual.
+	 * @param  view El view al cual se le dio click
+	 */	
 	public void resetGame(View view){
 		Intent intent = new Intent(this, ModoNormal.class);
 		deleteMP();
 		startActivity(intent);
 		finish();
 	}
-
+	/**
+	 * Funcion que decide si debe de cambiar el layout a uno sin scrollBar horizontal
+	 * tras haber determinado que la pantalla tiene el tamaño necesario. La función necesita
+	 * un API mayor o igual a 16 para verificar el tamaño de la pantalla antes de cambiar
+	 * el layout.
+	 */
 	@Override
 	@SuppressLint("NewApi")
 	public void gravityCenterAPI16() {
@@ -77,7 +102,12 @@ public class ModoNormal extends ModoPadre {
 			setContentView(R.layout.activity_modo_normal);
 		}		
 	}
-
+	/**
+	 * Funcion que decide si debe de cambiar el layout a uno sin scrollBar horizontal
+	 * tras haber determinado que la pantalla tiene el tamaño necesario. La función necesita
+	 * un API mayor o igual a 8 para verificar el tamaño de la pantalla antes de cambiar
+	 * el layout.
+	 */
 	@Override
 	public void gravityCenterAPI8() {
 		Display display = getWindowManager().getDefaultDisplay(); 

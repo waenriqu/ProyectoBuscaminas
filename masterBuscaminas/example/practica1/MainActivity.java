@@ -1,5 +1,12 @@
 package com.example.buscaminasremix;
-
+/**
+ * Esta clase es la primera actividad que ve el usuario al comenzar la
+ * aplicación. Muestra un menu de todos los modos de juego, para que con un
+ * click elija que en cual quiere jugar.
+ * 
+ * @author      Gabriel Aumala
+ * @author		Wilson Enriquez
+ */
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -8,7 +15,9 @@ import android.view.View;
 
 public class MainActivity extends Activity {
 	public final static String EXTRA_MESSAGE = "com.example.practica1.MESSAGE";
-
+	/**
+	 * Coloca el layout de la actividad principal justo despues de ser creada.
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -22,25 +31,37 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-	/** Called when the user clicks the Send button */
+	/**
+	 * Comienza el modo fácil cuando el usuario le da click al botón de modo fácil.
+	 * @param  view  el view al que se le dió click
+	 */
 	public void modoFacil(View view) {
 		Intent intent = new Intent(this, ModoFacil.class);
 		startActivity(intent);
 		
 	}
-	
+	/**
+	 * Comienza el modo normal cuando el usuario le da click al botón de modo normal.
+	 * @param  view  el view al que se le dió click
+	 */
 	public void modoNormal(View view) {
 		Intent intent = new Intent(this, ModoNormal.class);
 		startActivity(intent);
 		
 	}
-	
+	/**
+	 * Comienza el modo dificil cuando el usuario le da click al botón de modo dificil.
+	 * @param  view  el view al que se le dió click
+	 */
 	public void modoDificil(View view) {
 		Intent intent = new Intent(this, ModoDificil.class);
 		startActivity(intent);
 		
 	}
-	
+	/**
+	 * Comienza el modo remix cuando el usuario le da click al botón de modo remix.
+	 * @param  view  el view al que se le dió click
+	 */
 	public void modoRemix(View view) {
 		Intent intent = new Intent(this, ModoRemix.class);
 		startActivity(intent);
