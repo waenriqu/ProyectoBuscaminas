@@ -22,5 +22,12 @@
     <string name="listo">Listo</string>
     <string name="title_activity_modo_padre">Modo Padre</string>
     <string name="title_activity_modo_facil">Modo Fácil</string>
+    <string name="nombre">Nombre: </string>
+    <string name="tiempo">Tiempo: </string>
+    <string name="title_activity_result_screen_normal">Resultados Normal </string>
+    <string name="title_activity_result_screen_facil">Resultados Normal </string>
+    <string name="title_activity_result_screen_dificil">Resultados Normal </string>
+    <string name="title_activity_result_screen">ResultScreen </string>
+    <string name="title_activity_result_screen_remix">Resultados Normal </string>
 
 </resources>
