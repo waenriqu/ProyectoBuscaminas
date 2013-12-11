@@ -1,5 +1,6 @@
 package com.example.buscaminasremix;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 import android.os.Bundle;
@@ -9,17 +10,17 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class ResultScreen extends Activity {
+public abstract class ResultScreen extends Activity {
 String tiempo;
-Puntuaciones puntuaciones;
+Jugador jugador;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_result_screen);
 		 Intent intent = getIntent();
-		 tiempo = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-		 puntuaciones = new Puntuaciones(this.getApplicationContext());
+		 tiempo = intent.getStringExtra(ModoPadre.TIEMPO_MESSAGE);
 	}
 
 	@Override
@@ -29,23 +30,9 @@ Puntuaciones puntuaciones;
 		return true;
 	}
 	
-	public void addPuntuacion(View view){
-		EditText et = (EditText) findViewById(R.id.edit_message);
-		puntuaciones.guardarPuntuacion(tiempo, et.getText().toString(), 0);
-		setContentView(R.layout.ranking);
-	}
+	public abstract void addPuntuacion(View view);
 	
 	public void updateRanking(){
-		TextView tv = (TextView) findViewById(R.id.ranking);
-		Vector<String> listaRank = puntuaciones.listaPuntuaciones();
-		String text = "";
-		
-		for(String s:listaRank){
-			text = text + s +"\n";
-		}
-		
-		tv.setText(text);
-		tv.invalidate();
 		
 	}
 	

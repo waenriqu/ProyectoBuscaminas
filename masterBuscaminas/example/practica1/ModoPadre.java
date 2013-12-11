@@ -42,6 +42,7 @@ public abstract class ModoPadre extends Activity{
 	final int audioDerrota = R.raw.gameover;
 	MediaPlayer mpBandera, mpVictoria, mpDeactivate, mpDerrota;
 	public final static String TIEMPO_MESSAGE = "com.example.myfirstapp.TIEMPO";
+	public final static String CLASS_MESSAGE = "com.example.myfirstapp.CLASS";
 	/**
 	 * Inicializa los reproductores de efectos de sonidos justo cuando se crea la actividad.
 	 * @param  savedInstanceState Bundle con los últimos datos suministrados
@@ -102,7 +103,7 @@ public abstract class ModoPadre extends Activity{
 	            	detenerJuego();
 	            	actualizarCarita(true);
 	            	playAudio(mpVictoria);
-	            	//resultScreen();
+	            	resultScreen();
 	            }
 	        }
 
@@ -363,10 +364,28 @@ public abstract class ModoPadre extends Activity{
 	 * ganar al jugador.
 	 */
 	public void resultScreen(){
-		Intent intent = new Intent(this, ResultScreen.class);
-		TextView tv = (TextView) findViewById(R.id.tiempoview);
-		 intent.putExtra(TIEMPO_MESSAGE, tv.getText().toString());
-		startActivity(intent);
+		if(this instanceof ModoFacil){
+			Intent intent = new Intent(this, ResultScreenFacil.class);
+			TextView tw = (TextView)findViewById(R.id.tiempoview);
+			intent.putExtra(TIEMPO_MESSAGE, tw.getText().toString());
+			startActivity(intent);
+		} else if (this instanceof ModoNormal){
+			Intent intent = new Intent(this, ResultScreenNormal.class);	
+			TextView tw = (TextView)findViewById(R.id.tiempoview);
+			intent.putExtra(TIEMPO_MESSAGE, tw.getText().toString());
+			startActivity(intent);
+		} else if (this instanceof ModoDificil){
+			Intent intent = new Intent(this, ResultScreenDificil.class);	
+			TextView tw = (TextView)findViewById(R.id.tiempoview);
+			intent.putExtra(TIEMPO_MESSAGE, tw.getText().toString());
+			startActivity(intent);
+		} else{
+			Intent intent = new Intent(this, ResultScreenRemix.class);
+			TextView tw = (TextView)findViewById(R.id.tiempoview);
+			intent.putExtra(TIEMPO_MESSAGE, tw.getText().toString());
+			startActivity(intent);
+		}
+		
 	}
 	
 }
