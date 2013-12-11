@@ -18,6 +18,7 @@ public class CargarDatos {
 	Casilla [] board;
 	Integer [] graphics;
 	boolean finish;
+	String nombres, tiempos;
 	
 	/**
 	 * Crea un nuevo objeto CargarDatos 
@@ -64,6 +65,12 @@ public class CargarDatos {
 		this.vidas = vidas;
 		this.barrier = barrier;
 		this.combo = combo;
+	}
+	
+	public CargarDatos(boolean finish, String nombres, String tiempos){
+		this.finish = finish;
+		this.nombres = nombres;
+		this.tiempos = tiempos;
 	}
 	/**
 	 * Retorna la cantidad de segundos transcurridos en la partida guardados en el objeto CargarDatos
@@ -129,6 +136,14 @@ public class CargarDatos {
 	 */
 	public int getCombo() {
 		return combo;
+	}
+	
+	public String getNombres(){
+		return nombres;
+	}
+	
+	public String getTiempos(){
+		return nombres;
 	}
 	
 }

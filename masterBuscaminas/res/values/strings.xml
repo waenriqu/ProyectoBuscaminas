@@ -6,9 +6,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="Sekai">Buscaminas</string>
     <string name="edit_message">Enter a message</string>
-    <string name="button_facil">fÃ¡cil</string>
+    <string name="button_facil">Fácil</string>
     <string name="button_normal">Normal</string>
-    <string name="button_dificil">DifÃ­cil</string>
+    <string name="button_dificil">Difícil</string>
     <string name="title_activity_display_message">My Message</string>
     <string name="title_activity_grid_demo">GridDemo</string>
     <string name="resetBdesc">Resetea el juego</string>
@@ -29,5 +29,6 @@
     <string name="title_activity_result_screen_dificil">Resultados Normal </string>
     <string name="title_activity_result_screen">ResultScreen </string>
     <string name="title_activity_result_screen_remix">Resultados Normal </string>
+    <string name="title_activity_consult_results">ConsultResults</string>
 
 </resources>

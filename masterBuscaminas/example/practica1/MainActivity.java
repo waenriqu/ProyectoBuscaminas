@@ -67,5 +67,11 @@ public class MainActivity extends Activity {
 		startActivity(intent);
 		
 	}
+	
+	public void rankings(View view) {
+		Intent intent = new Intent(this, ConsultResults.class);
+		startActivity(intent);
+		
+	}
 
 }

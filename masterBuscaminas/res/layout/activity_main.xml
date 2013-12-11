@@ -55,6 +55,16 @@
         android:layout_marginTop="10dp"
         android:src="@drawable/boton4p"
         android:onClick="modoRemix" />
+    
+    <ImageView
+        android:id="@+id/buttonRankings"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_below="@id/buttonRemix"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/clicked"
+        android:onClick="rankings" />
 </RelativeLayout>
 </ScrollView>
 
