@@ -66,7 +66,15 @@ public class CargarDatos {
 		this.barrier = barrier;
 		this.combo = combo;
 	}
-	
+	/**
+	 * Crea un nuevo objeto CargarDatos con los datos que se necesitan guardar en la
+	 * pantalla de ranking.
+	 * @param  finish  un Boolean que indica true, si el jugador ya ingresó sus datos,
+	 * de lo contrario false
+	 * @param nombres Los nombres que se han impreso en pantalla
+	 * @param tiempos Los tiempos que se han impreso en pantalla
+	 * @return      objeto CargarDatos con toda la información guardada antes del cambio de configuración
+	 */
 	public CargarDatos(boolean finish, String nombres, String tiempos){
 		this.finish = finish;
 		this.nombres = nombres;
@@ -137,11 +145,17 @@ public class CargarDatos {
 	public int getCombo() {
 		return combo;
 	}
-	
+	/**
+	 * Retorna un String con todos los nombres que se han impreso por pantalla en ResultScreen.
+	 * @return     Un String con todos los nombres que se han impreso por pantalla
+	 */
 	public String getNombres(){
 		return nombres;
 	}
-	
+	/**
+	 * Retorna un String con todos los tiempos que se han impreso por pantalla en ResultScreen.
+	 * @return     Un String con todos los tiempos que se han impreso por pantalla
+	 */
 	public String getTiempos(){
 		return nombres;
 	}

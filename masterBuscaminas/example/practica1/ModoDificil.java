@@ -76,13 +76,17 @@ public class ModoDificil extends ModoPadre {
 	/**
 	 * Resetea el juego. Comienza una nueva actividad idéntica a esta, pero antes
 	 *　libera la memoria de los efectos de sonidos y cierra la actividad actual.
+	 * Sólo se permite resetear, si el jugador ya comenzó una partida.
 	 * @param  view El view al cual se le dio click
 	 */
 	public void resetGame(View view){
-		Intent intent = new Intent(this, ModoDificil.class);
-		deleteMP();
-		startActivity(intent);
-		finish();
+		if(start){
+			Intent intent = new Intent(this, ModoDificil.class);
+			deleteMP();
+			startActivity(intent);
+			finish();
+		}
+		
 	}
 	/**
 	 * Funcion que decide si debe de cambiar el layout a uno sin scrollBar horizontal

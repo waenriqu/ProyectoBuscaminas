@@ -1,4 +1,6 @@
 package com.example.buscaminasremix;
+
+import android.widget.TextView;
 /**
  * El Reloj controla los métodos que se deben de ejecutar periódicamente
  * en el juego. La función principal es contar el tiempo que transcurre en
@@ -8,8 +10,6 @@ package com.example.buscaminasremix;
  * @author      Gabriel Aumala
  * @author		Wilson Enriquez
  */
-import android.widget.TextView;
-
 public class Reloj {
 	public String minutos = "00", segundos = "00";
 	int cont = 0;

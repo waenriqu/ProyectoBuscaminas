@@ -6,14 +6,14 @@
     <string name="hello_world">Hello world!</string>
     <string name="Sekai">Buscaminas</string>
     <string name="edit_message">Enter a message</string>
-    <string name="button_facil">FÃ¡cil</string>
+    <string name="button_facil">Fácil</string>
     <string name="button_normal">Normal</string>
-    <string name="button_dificil">DifÃ­cil</string>
+    <string name="button_dificil">Difícil</string>
     <string name="title_activity_display_message">My Message</string>
     <string name="title_activity_grid_demo">GridDemo</string>
     <string name="resetBdesc">Resetea el juego</string>
     <string name="title_activity_modo_normal">Modo Normal</string>
-    <string name="title_activity_modo_dificil">Modo DifÃ­cil</string>
+    <string name="title_activity_modo_dificil">Modo Difícil</string>
     <string name="reloj">00:00</string>
     <string name="title_activity_modo_remix">ModoRemix</string>
     <string name="button_remix">Remix</string>

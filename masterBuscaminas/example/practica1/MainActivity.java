@@ -1,4 +1,10 @@
 package com.example.buscaminasremix;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Intent;
+import android.view.Menu;
+import android.view.View;
 /**
  * Esta clase es la primera actividad que ve el usuario al comenzar la
  * aplicación. Muestra un menu de todos los modos de juego, para que con un
@@ -7,12 +13,6 @@ package com.example.buscaminasremix;
  * @author      Gabriel Aumala
  * @author		Wilson Enriquez
  */
-import android.os.Bundle;
-import android.app.Activity;
-import android.content.Intent;
-import android.view.Menu;
-import android.view.View;
-
 public class MainActivity extends Activity {
 	public final static String EXTRA_MESSAGE = "com.example.practica1.MESSAGE";
 	/**
