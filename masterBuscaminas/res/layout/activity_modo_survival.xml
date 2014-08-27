@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
+    
+  <ImageView
+    android:id="@+id/barrier"
+    android:layout_width="582dp"
+    android:layout_height="14dp"
+    android:layout_alignParentTop="true"
+    android:src="@drawable/bar100"
+    android:layout_marginTop="5dp"
+    android:contentDescription="@string/resetBdesc"/>
+ 
+ <TextView
+    android:id="@+id/combo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@id/barrier" 
+    android:text="@string/comboempty"
+    android:textSize="48sp"/>
+ 
+  
+<ImageButton
+    android:id="@+id/resetButton"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_below="@id/barrier" 
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="5dp"
+    android:src="@drawable/reset"
+    android:onClick="resetGame"
+    android:contentDescription="@string/resetBdesc"/>
+        
+<GridView
+    android:id="@+id/gridview"
+    android:layout_width="436dp"
+    android:layout_height="fill_parent"
+    android:layout_below="@id/combo"
+    android:columnWidth="36dp"
+    android:gravity="center"
+    android:horizontalSpacing="0dp"
+    android:numColumns="12"
+    android:stretchMode="none"
+    android:verticalSpacing="0px"
+    android:layout_centerHorizontal="true" />
+
+<TextView
+    android:id="@+id/tiempoview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_below="@id/barrier" 
+    android:layout_marginTop="5dp"
+    android:text="@string/reloj"
+    android:textSize="48sp"/>
+
+<TextView
+    android:id="@+id/multiplier"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@id/gridview"
+    android:layout_toLeftOf="@+id/tiempoview" 
+    android:layout_marginRight="15dp"
+    android:text="@string/x2"
+    android:textColor="#9400D3"
+    android:textSize="36sp"/>
+
+<ImageView
+    android:id="@+id/vidaView"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_alignTop="@+id/resetButton"
+    android:layout_toLeftOf="@+id/multiplier" 
+    android:contentDescription="@string/resetBdesc"
+    android:src="@drawable/vida" />
+
+</RelativeLayout>

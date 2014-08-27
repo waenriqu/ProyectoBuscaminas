@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"     >
+		<RelativeLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:layout_gravity="center"    >
+		    
+		    <TextView android:id="@+id/result_message"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:text="@string/resultmsj"
+		        android:gravity="center"
+		        android:layout_marginTop="30dp"
+		        android:textSize="28sp"
+		        android:textAlignment="center" />
+		    
+		    <TextView android:id="@+id/score"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:text="@string/reloj"
+		        android:gravity="center"
+		        android:layout_below="@id/result_message"
+		        android:textSize="36sp"
+		        android:textColor="#ab0039"
+		        android:layout_marginTop="30dp"
+		        android:textAlignment="center" />
+		    
+		    <EditText android:id="@+id/edit_message"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:hint="@string/edit_message"
+		        android:layout_marginTop="20dp"
+		        android:imeOptions="actionGo"
+		        android:gravity="center"        
+		        android:layout_below="@id/score" />
+			
+		    
+		    <Button android:id="@+id/tw_button"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="10dp"
+		        android:layout_marginLeft="87dp"
+		        android:text="@string/tweet"
+		        android:gravity="center"
+		        android:layout_below="@id/edit_message"
+		        android:onClick="tweetIt" />
+		    
+		    <Button
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/listo"
+		        android:gravity="center"
+		        android:layout_alignTop="@id/tw_button"
+		        android:layout_toRightOf="@id/tw_button"
+		        android:onClick="addPuntuacion" />
+		    
+		
+		
+		</RelativeLayout>
+</ScrollView>
