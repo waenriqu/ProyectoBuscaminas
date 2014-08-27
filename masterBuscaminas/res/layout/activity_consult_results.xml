@@ -161,5 +161,45 @@
         android:layout_alignLeft="@id/tiempotitle4"
         android:text="@string/comboempty" 
         android:textSize="24sp"/>
+
+<TextView 
+    	android:id="@+id/titlesurvival"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nombrelist4"
+        android:text="@string/button_survival" 
+        android:textSize="45sp"/>
+<TextView 
+    	android:id="@+id/nombretitle5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titlesurvival"
+        android:text="@string/nombre" 
+        android:textSize="36sp"/>
+<TextView 
+    	android:id="@+id/tiempotitle5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titlesurvival"
+        android:layout_marginLeft="40dp"
+        android:layout_toRightOf="@id/nombretitle5"
+        android:text="@string/tiempo" 
+        android:textSize="36sp"/>
+<TextView 
+    	android:id="@+id/nombrelist5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nombretitle5"
+        android:layout_alignLeft="@id/nombretitle5"
+        android:text="@string/comboempty" 
+        android:textSize="24sp"/>
+<TextView 
+    	android:id="@+id/tiempolist5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tiempotitle5"
+        android:layout_alignLeft="@id/tiempotitle5"
+        android:text="@string/comboempty" 
+        android:textSize="24sp"/>
 </RelativeLayout>
 </ScrollView>

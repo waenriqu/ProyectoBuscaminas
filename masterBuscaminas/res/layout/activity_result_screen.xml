@@ -3,37 +3,20 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_gravity="center">
-<LinearLayout 
-    android:id="@+id/linear"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <EditText android:id="@+id/edit_message"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/edit_message" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/listo"
-        android:onClick="addPuntuacion" />
-    
-</LinearLayout>
 <TextView 
     	android:id="@+id/nombretitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/linear"
         android:text="@string/nombre" 
+        android:layout_marginTop="20dp"
         android:textSize="36sp"/>
 <TextView 
     	android:id="@+id/tiempotitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/linear"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
         android:layout_toRightOf="@id/nombretitle"
         android:text="@string/tiempo" 
         android:textSize="36sp"/>
